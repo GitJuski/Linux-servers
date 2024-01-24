@@ -1,6 +1,6 @@
 # Introduction
 
-In assignment x I'm supposed to summarize a post by Tero karvinen. This post is called "Command Line Basics Revisited" and it can be read [here](https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited). The post can be summarized with a couple of bullet points. The other assigment is divided into subassignments. These tasks are to be done inside a Linux environment. I used a virtual machine that has Debian in it.
+In assignment x I'm supposed to summarize a post by Tero karvinen. This post is called "Command Line Basics Revisited" and it can be read [here](https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited). The post can be summarized with a couple of bullet points. The other assigment is divided into subassignments. These tasks are to be done inside a Linux environment. I used a virtual machine that has Debian on it.
 
 
 ## Command Line Basics Revisited summarized
