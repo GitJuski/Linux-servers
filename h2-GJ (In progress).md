@@ -62,3 +62,16 @@ At 2:12 PM I ran this ```systemctl | grep sudo | less``` command to read sudo lo
 ### Log
 
 I purposely caused a mistake when writing sudo pass to check the event with journalctl. I used ```journalctl -p err | grep sudo``` to find this event. Then I started ```journalctl -f``` on one terminal and opened a second one. With the second terminal I created a user with ```sudo adduser testi```. Then I deleted the user "testi" with ```sudo userdel testi```. Both of these succesful events can be seen on the journalctl log. At 2:38 PM I was done.
+
+
+# References
+
+Karvinen, T. January 11, 2024. Linux Palvelimet 2024 alkukevät. Homework. Available at [https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/](https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/).
+
+Karvinen, T. February 3, 2020. Command Line Basics Revisited. Available at [https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited](https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited). Read on January 25, 2024.
+
+Gurpreet, S. August 16, 2023. 15 Fun Linux Command Line Programs to Spice Up Your Terminal. Medium. Available at [https://medium.com/@gurpreet.singh_89/15-fun-linux-command-line-programs-to-spice-up-your-terminal-abf30af73de1](https://medium.com/@gurpreet.singh_89/15-fun-linux-command-line-programs-to-spice-up-your-terminal-abf30af73de1). Read on January 25, 2024.
+
+Ramuglia, G. December 15, 2023. ncdu Command Guide | Managing Linux Disk Usage. I/O Floods. Blog. Available at [https://ioflood.com/blog/ncdu-linux-command/](https://ioflood.com/blog/ncdu-linux-command/). Read on January 25, 2024.
+
+Reddit. February 15, 2023. What "nice-to-have" CLI tools do you know? Post at r/linuxquestions. Available at [https://www.reddit.com/r/linuxquestions/comments/112i1vl/what_nicetohave_cli_tools_do_you_know/?rdt=38896](https://www.reddit.com/r/linuxquestions/comments/112i1vl/what_nicetohave_cli_tools_do_you_know/?rdt=38896). Read on January 25, 2024.
