@@ -75,7 +75,7 @@ This time I used the ```-y``` to automatically confirm the intallation. Then I u
 
 ![lshw](Screenshots/2/lshw.png)
 
-__________ . It was 11:55 AM and I was done with this.
+The man page for lshw states that the -short and -sanitize options make the output shorter and without possible sensitive information. The output shows that the system was virtualbox, there were 8064MiB of ram and the processor was AMD Ryzen 3 PRO 5450U with Radeon Graphic. Other interesting information were 54GB VBOX HARDDISK which was the storage, different input devices and network adapter. In conclusion this command shows essential hardware information in a shorter form and without sensitive information. It uses classes to group. These classes were system, bus, memory, processor, bridge, input, storage, disk, display, network, multimedia and volume. It was 11:55 AM and I was done with this.
 
 ### Three programs
 
@@ -131,11 +131,11 @@ I was instructed to find and show the important directories explained in the pos
 
 ![cdroot](Screenshots/2/cdroot.png)
 
-Then I used ls to list the contents.
+Then I used ls to list the contents. Here an interesting directories are bin and sbin. Bin short for binary has binary files. For example, commands like ls or grep etc can be found here. Sbin is system bin where important system binaries are located.
 
 ![lsroot](Screenshots/2/lsroot.png)
 
-Next up was the home directory. I traversed there with ```cd home/```.
+Next up was the home directory. I traversed there with ```cd home/```. There was only one posible directory since I only had one user made.
 
 ![cdhome](Screenshots/2/cdhome.png)
 
@@ -143,15 +143,15 @@ As I used the tab key to speed up the process it completed the home/. Here was m
 
 ![lshome](Screenshots/2/lshome.png)
 
-I traversed there with ```cd juusov/```. Then to move into /etc/ I used cd ```cd /etc/``` to jump there instantly.
+I traversed there with ```cd juusov/```. Then to move into /etc/ I used cd ```cd /etc/``` to jump there instantly. Configuration files can be found here. For example config files for networks, sudoers file or python3.
 
 ![etsy](Screenshots/2/etsy.png)
 
-Then I jumped into /media/ with ```cd /media/```.
+Then I jumped into /media/ with ```cd /media/```. Removable media can be found here.
 
 ![media](Screenshots/2/media.png)
 
-Then traversed to the /var/log/ with ```cd /var/log/```.
+Then traversed to the /var/log/ with ```cd /var/log/```. Logs can be found here.
 
 ![logls](Screenshots/2/logls.png)
 
@@ -195,11 +195,11 @@ Closed it with q. I was done at 2:14 PM.
 
 ### Log
 
-I purposely caused a mistake when writing sudo pass to check the event with journalctl. I used ```journalctl -p err | grep sudo``` to find this event.
+I purposely caused a mistake when writing sudo pass to check the event with journalctl. I used ```journalctl -p err | grep sudo``` to find this event. The log says pretty clearly that the user "juusov" from /home/juusov inserted one incorrect password when trying to use the command useradd. The useradd binary recides in /usr/sbin.
 
 ![passfail](Screenshots/2/passfail.png)
 
-Then I started ```journalctl -f``` on one terminal and opened a second one. With the second terminal I created a user with ```sudo adduser testi```. Then I deleted the user "testi" with ```sudo userdel testi```. Both of these succesful events can be seen on the journalctl log.
+Then I started ```journalctl -f``` on one terminal and opened a second one. With the second terminal I created a user with ```sudo adduser testi```. Then I deleted the user "testi" with ```sudo userdel testi```. Both of these succesful events can be seen on the journalctl log. First line indicates that a sudo session was opened. Before this line should be info on what command was used by who and where but it seems like I took a bad screenshot. a group named testi was added to /etc/group and /etc/gshadow. A new user was created with the name testi. Home directory was declared to be /home/testi. Default shell was configured to be bash. Password was made for user testi. "gkr-pam: couldn't update the login keyring password: no old password was entered" is probably caused by the fact that the new user testi didn't have an old password since I created it for the first time. So this can be ignored if my deduction is correct. Testi was added to the group "users". Sudo session closed. User juusov used the command (sudo) userdel testi from /home/juusov/Desktop. Juusov inserted the correct password and opened a sudo session. User testi was deleted. User testi was deleted from group "users". Group testi was removed. User testi was deleted from shadow group "users". Sudo session closed.
 
 ![success](Screenshots/2/success.png)
 
