@@ -20,3 +20,45 @@ In assignment x I'm supposed to summarize a post by Tero karvinen. This post is 
 -   Package managers are used to manage packages in Linux systems. ```sudo apt-get update``` updates the list of available packages. ```sudo apt-get install``` is used to install software. To remove a software and its settings a user can use the command ```sudo apt-get purge```. (Karvinen s.a.)
 
 ## Report
+
+### Essential information
+
+I opened the system information application by searching "sysinfo" in the windows search bar. 
+
+- Lenovo Thinkpad T14 Gen 2a
+- AMD Ryzen 3 PRO 5450U with Radeon Graphics, 2600 Mhz, 4 cores and 8 logical processors
+- 16 GB RAM
+- Windows 11 Pro
+- x64-based PC
+- SSD with 396 GB free space
+- It was January 25, 2024. I was at home in Vaasa.
+- I used a wireless connection which was great.
+
+
+### Installing micro
+
+At 11:25 AM I started to work on this assignment. First I opened the Virtualbox application. When it opened I clicked on launch. In under a minute I was at the login screen. I logged in. I opened the terminal and ran ```sudo apt update``` and ```sudo apt upgrade```. Then I ran ```sudo apt install micro``` to install the micro text editor. I tested that the app works. Ctrl + S to save and Ctrl + Q to exit. Used cat to read the contents. Micro was succesfully installed and it was 11:36 AM.
+
+### Specs
+
+Here I was supposed to list hardware information using lshw. I started doing this at 11:43 AM. First I checked if lshw was already installed. For practice I first used the ```apt list --installed | less``` to pipe the output into less. Then I used a faster method with ```apt list --installed | grep lshw```. Neither method found lshw installed so I installed it with ```sudo apt install -y lshw```. This time I used the ```-y``` to automatically confirm the intallation. Then I used the command ```sudo lshw -short -sanitize``` and to fit everything into a screen capture I used the Ctrl + - to make to font smaller. __________ . It was 11:55 AM and I was done with this.
+
+### Three programs
+
+At 12:30 PM I started working on this assignment. The programs I decided to install were htop, ncdu and cowsay. I had to search for intersting programs that I haven't tried and wanted to test. To install all three at the same time I ran ```sudo apt install htop ncdu cowsay```. It only took a couple of seconds. I started with htop. With ```htop --help``` I could find some options. I decided to run ```htop -t```. This opened an interesting page where I could gain insight on what is happening on the device for example running processes. I was able to scroll and exit with using a mouse which was a nice touch. Next up was ncdu. I decided to check a post by I/O flood where the basic usage of ncdu was explained. I tried ```ncdu /home```. I navigated using the arrow keys and enter. I checked the cache and went deeper until I was at the end. I found that the Firefox startup cache was taking the most space. Last but not least I tested the cowsay program. I checked the manual page with ```man cowsay```. I made a cow and tux say Hello! I was done with this at 1:04 PM. 
+
+### Important directories
+
+I was instructed to find and show the important directories explained in the post by Tero (Karvinen s.a). These were ```/``` ```/home/``` ```/home/[username]/``` ```/etc/``` ```/media/``` ```/var/log/```. I started at 1:08 PM. First was the root directory. I went there with ```cd /``` and double checked it with ```pwd```. Then I used ls to list the contents. Next up was the home directory. I traversed there with ```cd home/```. As I used the tab key to speed up the process it completed the home/. Here was my users home directory. I traversed there with ```cd juusov/```. Then to move into /etc/ I used cd ```cd /etc/``` to jump there instantly. Then I jumped into /media/ with ```cd /media/```. Then traversed to the /var/log/ with ```cd /var/log/```. Then I just jumped back to /var/ with ```cd ..```. I was done at 1:16 PM. Traversing in the cli is fast but reporting every move at the same time is slow.
+
+### Using grep
+
+I started this at 1:32 PM. First I wanted to see if the bluetooth service was enabled or disabled so I used ```sudo service --status-all | grep bluetooth```. The output showed that the bluetooth service were in fact disabled. I learned the ```service --status-all``` command some time ago when I learned about Linux hardening checklists. I moved into the /bin directory with ```cd bin```. There I checked the man page of grep with ```man grep``` because I wanted to find a way of using grep to find the absolute value. I found that it can be done with ```grep -w```. Then I decided to search grep with grep from the /bin directory. I did this with ```ls | grep -w grep```. This is the output without -w. Here I checked the error logs and I wanted to find error messages that were associated with sudo. So I used ```sudo journalctl -p err | grep sudo```. I found the -p err from journalctl manual with ```man journalctl```. Played around a bit and checked possible emerengy and critical logs aswell. I was done at 2:08 PM.
+
+### Using pipes
+
+At 2:12 PM I ran this ```systemctl | grep sudo | less``` command to read sudo logs with less. Closed it with q. I was done at 2:14 PM.
+
+### Log
+
+I purposely caused a mistake when writing sudo pass to check the event with journalctl. I used ```journalctl -p err | grep sudo``` to find this event. Then I started ```journalctl -f``` on one terminal and opened a second one. With the second terminal I created a user with ```sudo adduser testi```. Then I deleted the user "testi" with ```sudo userdel testi```. Both of these succesful events can be seen on the journalctl log. At 2:38 PM I was done.
