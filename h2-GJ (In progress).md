@@ -1,6 +1,6 @@
 # Introduction
 
-In assignment x I'm supposed to summarize a post by Tero karvinen. This post is called "Command Line Basics Revisited" and it can be read [here](https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited). The post can be summarized with a couple of bullet points. The other assigment is divided into subassignments. These tasks are to be done inside a Linux environment. I used a virtual machine that has Debian on it.
+In assignment x (Karvinen 2024)  I'm supposed to summarize a post by Tero karvinen. This post is called "Command Line Basics Revisited" and it can be read [here](https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited). The post can be summarized with a couple of bullet points. The other assigment is divided into subassignments. These tasks are to be done inside a Linux environment. I used a virtual machine that has Debian on it.
 
 
 ## Command Line Basics Revisited summarized
@@ -10,12 +10,12 @@ In assignment x I'm supposed to summarize a post by Tero karvinen. This post is 
 - Tero (2020) explains that in Linux cli a user is always in a directory. Important commands when moving around include ```pwd``` ```ls``` ```cd``` ```less``` (Karvinen 2020).
 - pwd (Print Working Directory) tells the user the current directory they are in. ls (list) lists the files and directories inside the current directory. cd (Change Directory) can be used to traverse between directories. less can be used to read the contents of a file without being able to make changes. Another command for reading file contents is cat (concatenate) which is good for files with contents that aren't too large. The less command is very useful when reading long outputs of another command. For example this ```ls | less``` command would put the output of the ls command into less (Karvinen 2020). 
 - With text editors like nano or pico a user can make and modify files (Karvinen 2020). Important commands when working with files include ```mkdir``` ```mv``` ```cp``` ```rmdir``` ```rm``` (Karvinen 2020).
-- mkdir creates a new directory. For example ```mkdir dire``` creates a directory named dire inside the working directory. The mv command can be used to move files or directories. It can also be used to rename files or directories. With the cp command a user can copy files or directories. ```cp -r``` copies the directory with everything inside it. The rmdir command can be used to remove an empty directory. Files can be removed with the rm command. The rm command can be also used to remove a directory with contents by using -r like this ```rm -r [target]```. (Karvinen 2020.)
-- With ssh a user can remotely securely command a target device. Tero (2020) explain that to open a remote connection like this a user needs to write a command like this ```ssh [username]@[server]```. To exit the session a user needs to type ```exit```. To copy a directory to the remote machine, one would need to use a command like this ```scp -r [directory] [username]@[server]:[destination]```. To be noted that the user has to be exited to remote session before running this command since it runs natively. (Karvinen 2020.)
+- mkdir creates a new directory. For example ```mkdir dire``` creates a directory named dire inside the working directory. The mv command can be used to move files or directories. It can also be used to rename files or directories. With the cp command a user can copy files or directories. ```cp -r``` copies the directory with everything inside it. The rmdir command can be used to remove an empty directory. Files can be removed with the rm command. The rm command can also be used to remove a directory with contents by using -r like this ```rm -r [target]```. (Karvinen 2020.)
+- With ssh a user can remotely and securely command a target device. Tero (2020) explains that to open a remote connection with ssh a user needs to write a command like this ```ssh [username]@[server]```. To exit the session a user needs to type ```exit```. To copy a directory to the remote machine, one would need to use a command like this ```scp -r [directory] [username]@[server]:[destination]```. To be noted that the user has to be out of the remote session before running this command since it runs natively. (Karvinen 2020.)
 - With the man which is short for manual a user can find useful information on commands. For example a command ```man ls```opens the manual page for the command ls. ```--help``` or ```-h``` can also be useful. They open a more compact version of useful information on commands. For example ```ls --help``` and ```wget -h```. (Karvinen 2020.)
 -  To find the history of typed commands in a session, one would simply use the ```history``` command (Karvinen 2020).
--  Tero (2020) recommends the use of the tab key on a keyboard. With the tab a user can fill needed information without manually writing it. This prevents unnecessary typos. When pressing the tab key twice it shows possible results. (Karvinen 2020.)
--   Tero (2020) states that the important directories in a Linux system include ```/``` ```/home/``` ```/home/[username]/``` ```/etc/``` ```/media/``` ```/var/log/```. Root directory is / "everything is under /". /home/ home directories are here. A home directory for a certain user can be found at /home/[username]. "All system wide settings" can be found at /etc/. Removable media can be found at /media/. System logs can be found at /var/log/. (Karvinen 2020.)
+-  Tero (2020) recommends the use of the tab key on a keyboard. With the tab a user can fill needed information without manually writing it. This prevents unnecessary typos. When pressing the tab key twice it shows the possible results. (Karvinen 2020.)
+-   Tero (2020) states that the important directories in a Linux system include ```/``` ```/home/``` ```/home/[username]/``` ```/etc/``` ```/media/``` ```/var/log/```. Root directory is / and "everything is under /". /home/ home directories are here. A home directory for a certain user can be found at /home/[username]. "All system wide settings" can be found at /etc/. Removable media can be found at /media/. System logs can be found at /var/log/. (Karvinen 2020.)
 -   It is important to practice the principle of least privilege. When higher privileges are required the user can run commands with sudo. (Karvinen 2020.)
 -   Package managers are used to manage packages in Linux systems. ```sudo apt-get update``` updates the list of available packages. ```sudo apt-get install``` is used to install software. To remove a software and its settings a user can use the command ```sudo apt-get purge```. (Karvinen 2020.)
 
@@ -37,7 +37,7 @@ I opened the system information application by searching "sysinfo" in the window
 
 ### Installing micro
 
-At 11:25 AM I started to work on this assignment. First I opened the Virtualbox application. When it opened I clicked on launch.
+At 11:25 AM I started to work on this assignment. First I opened the Virtualbox application. When it opened I clicked on start.
 
 ![start](Screenshots/2/start.png)
 
@@ -63,7 +63,7 @@ Micro was succesfully installed and it was 11:36 AM.
 
 ### Specs
 
-Here I was supposed to list hardware information using lshw. I started doing this at 11:43 AM. First I checked if lshw was already installed. For practice I first used the ```apt list --installed | less``` to pipe the output into less. Then I used a faster method with ```apt list --installed | grep lshw```.
+Here I was supposed to list hardware information with lshw. I started doing this at 11:43 AM. First I checked if lshw was already installed. For practice I first used the ```apt list --installed | less``` to pipe the output into less. Then I used a faster method with ```apt list --installed | grep lshw```.
 
 ![aptlist](Screenshots/2/aptlist.png)
 
@@ -75,11 +75,11 @@ This time I used the ```-y``` to automatically confirm the intallation. Then I u
 
 ![lshw](Screenshots/2/lshw.png)
 
-The man page for lshw states that the -short and -sanitize options make the output shorter and without possible sensitive information. The output shows that the system was virtualbox, there were 8064MiB of ram and the processor was AMD Ryzen 3 PRO 5450U with Radeon Graphic. Other interesting information were 54GB VBOX HARDDISK which was the storage, different input devices and network adapter. In conclusion this command shows essential hardware information in a shorter form and without sensitive information. It uses classes to group. These classes were system, bus, memory, processor, bridge, input, storage, disk, display, network, multimedia and volume. It was 11:55 AM and I was done with this.
+The man page for lshw states that the -short and -sanitize options make the output shorter and without possible sensitive information. The output shows that the system was virtualbox, there were 8064MiB of ram and the processor was AMD Ryzen 3 PRO 5450U with Radeon Graphics. Other interesting information were 54GB VBOX HARDDISK which was the storage, different input devices and network adapter. In conclusion this command shows essential hardware information in a shorter form and without sensitive information. It uses classes to group. These classes were system, bus, memory, processor, bridge, input, storage, disk, display, network, multimedia and volume. It was 11:55 AM and I was done with this.
 
 ### Three programs
 
-At 12:30 PM I started working on this assignment. The programs I decided to install were htop, ncdu and cowsay. I had to search for intersting programs that I haven't tried and wanted to test. I found htop and ncdu from a Reddit post (2023). To install all three at the same time I ran ```sudo apt install htop ncdu cowsay```.
+At 12:30 PM I started working on this assignment. The programs I decided to install were htop, ncdu and cowsay. I had to search for interesting programs that I haven't tried and wanted to test. I found htop and ncdu from a Reddit post (2023). To install all three at the same time I ran ```sudo apt install htop ncdu cowsay```.
 
 ![install...](Screenshots/2/install....png)
 
@@ -105,11 +105,11 @@ I navigated using the arrow keys and enter.
 
 I checked the cache and went deeper until I was at the end.
 
-![ncdu1](Screenshots/2/ncdu1.png)
-
 ![ncdu2](Screenshots/2/ncdu2.png)
 
 ![ncdu3](Screenshots/2/ncdu3.png)
+
+![ncdu4](Screenshots/2/ncdu4.png)
 
 I found that the Firefox startup cache was taking the most space. Last but not least I tested the cowsay program. Gurpeets (2023) post got me interested in the cowsay program. I checked the manual page with ```man cowsay```.
 
@@ -167,7 +167,7 @@ I started this at 1:32 PM. First I wanted to see if the bluetooth service was en
 
 ![service](Screenshots/2/service.png)
 
-The output showed that the bluetooth service were in fact disabled. I learned the ```service --status-all``` command some time ago when I learned about Linux hardening checklists. I moved into the /bin directory with ```cd bin```. There I checked the man page of grep with ```man grep``` because I wanted to find a way of using grep to find the absolute value. I found that it can be done with ```grep -w```. Then I decided to search grep with grep from the /bin directory. I did this with ```ls | grep -w grep```.
+The output showed that the bluetooth service was in fact disabled. I learned the ```service --status-all``` command some time ago when I learned about Linux hardening checklists. I moved into the /bin directory with ```cd bin```. There I checked the man page of grep with ```man grep``` because I wanted to find a way of using grep to find the absolute value. I found that it can be done with ```grep -w```. Then I decided to search grep with grep from the /bin directory. I did this with ```ls | grep -w grep```.
 
 ![grep](Screenshots/2/grep.png)
 
@@ -179,7 +179,7 @@ Here I checked the error logs and I wanted to find error messages that were asso
 
 ![err](Screenshots/2/err.png)
 
-I found the -p err from journalctl manual with ```man journalctl```. Played around a bit and checked possible emerengy and critical logs aswell.
+I found the -p err from journalctl manual with ```man journalctl```. Played around a bit and checked possible emergency and critical logs aswell.
 
 ![crit](Screenshots/2/crit.png)
 
