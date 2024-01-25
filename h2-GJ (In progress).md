@@ -37,31 +37,173 @@ I opened the system information application by searching "sysinfo" in the window
 
 ### Installing micro
 
-At 11:25 AM I started to work on this assignment. First I opened the Virtualbox application. When it opened I clicked on launch. In under a minute I was at the login screen. I logged in. I opened the terminal and ran ```sudo apt update``` and ```sudo apt upgrade```. Then I ran ```sudo apt install micro``` to install the micro text editor. I tested that the app works. Ctrl + S to save and Ctrl + Q to exit. Used cat to read the contents. Micro was succesfully installed and it was 11:36 AM.
+At 11:25 AM I started to work on this assignment. First I opened the Virtualbox application. When it opened I clicked on launch.
+
+![start](Screenshots/2/start.png)
+
+In under a minute I was at the login screen. I logged in. I opened the terminal and ran ```sudo apt update``` and ```sudo apt upgrade```.
+
+![update](Screenshots/2/update.png)
+
+Then I ran ```sudo apt install micro``` to install the micro text editor.
+
+![micro](Screenshots/2/micro.png)
+
+I tested that the app works. Ctrl + S to save and Ctrl + Q to exit.
+
+![microtesti](Screenshots/2/microtesti.png)
+
+![toimii](Screenshots/2/toimii.png)
+
+Used cat to read the contents.
+
+![cattesti](Screenshots/2/cattesti.png)
+
+Micro was succesfully installed and it was 11:36 AM.
 
 ### Specs
 
-Here I was supposed to list hardware information using lshw. I started doing this at 11:43 AM. First I checked if lshw was already installed. For practice I first used the ```apt list --installed | less``` to pipe the output into less. Then I used a faster method with ```apt list --installed | grep lshw```. Neither method found lshw installed so I installed it with a command ```sudo apt install -y lshw```. This time I used the ```-y``` to automatically confirm the intallation. Then I used the command from the post by Tero (2020)```sudo lshw -short -sanitize``` and to fit everything into a screen capture I used the Ctrl + - to make to font smaller. __________ . It was 11:55 AM and I was done with this.
+Here I was supposed to list hardware information using lshw. I started doing this at 11:43 AM. First I checked if lshw was already installed. For practice I first used the ```apt list --installed | less``` to pipe the output into less. Then I used a faster method with ```apt list --installed | grep lshw```.
+
+![aptlist](Screenshots/2/aptlist.png)
+
+Neither method found lshw installed so I installed it with a command ```sudo apt install -y lshw```.
+
+![lshwinstall](Screenshots/2/lshwinstall.png)
+
+This time I used the ```-y``` to automatically confirm the intallation. Then I used the command from the post by Tero (2020)```sudo lshw -short -sanitize``` and to fit everything into a screen capture I used the Ctrl + - to make to font smaller.
+
+![lshw](Screenshots/2/lshw.png)
+
+__________ . It was 11:55 AM and I was done with this.
 
 ### Three programs
 
-At 12:30 PM I started working on this assignment. The programs I decided to install were htop, ncdu and cowsay. I had to search for intersting programs that I haven't tried and wanted to test. I found htop and ncdu from a Reddit post (2023). To install all three at the same time I ran ```sudo apt install htop ncdu cowsay```. It only took a couple of seconds. I started with htop. With ```htop --help``` I could find some options. I decided to run ```htop -t```. This opened an interesting view where I could gain insight on what is happening on the device for example running processes. I was able to scroll and exit with using a mouse which was a nice touch. Next up was ncdu. I decided to check a post by Ramuglia on I/O Flood (2023) where the basic usage of ncdu was explained. I tried ```ncdu /home``` (Ramuglia, 2023). I navigated using the arrow keys and enter. I checked the cache and went deeper until I was at the end. I found that the Firefox startup cache was taking the most space. Last but not least I tested the cowsay program. Gurpeets (2023) post got me interested in the cowsay program. I checked the manual page with ```man cowsay```. I made a cow and Tux say Hello! Got the ```-f tux``` from linux.fi (s.a) post. I was done with this at 1:04 PM. 
+At 12:30 PM I started working on this assignment. The programs I decided to install were htop, ncdu and cowsay. I had to search for intersting programs that I haven't tried and wanted to test. I found htop and ncdu from a Reddit post (2023). To install all three at the same time I ran ```sudo apt install htop ncdu cowsay```.
+
+![install...](Screenshots/2/install....png)
+
+It only took a couple of seconds. I started with htop. With ```htop --help``` I could find some options.
+
+![htophelp](Screenshots/2/htophelp.png)
+
+I decided to run ```htop -t```.
+
+![htop-t](Screenshots/2/htop-t.png)
+
+This opened an interesting view where I could gain insight on what is happening on the device for example running processes.
+
+![htop](Screenshots/2/htop.png)
+
+I was able to scroll and exit with using a mouse which was a nice touch. Next up was ncdu. I decided to check a post by Ramuglia on I/O Flood (2023) where the basic usage of ncdu was explained. I tried ```ncdu /home``` (Ramuglia, 2023).
+
+![ncduhome](Screenshots/2/ncduhome.png)
+
+I navigated using the arrow keys and enter.
+
+![ncdu](Screenshots/2/ncdu.png)
+
+I checked the cache and went deeper until I was at the end.
+
+![ncdu1](Screenshots/2/ncdu1.png)
+
+![ncdu2](Screenshots/2/ncdu2.png)
+
+![ncdu3](Screenshots/2/ncdu3.png)
+
+I found that the Firefox startup cache was taking the most space. Last but not least I tested the cowsay program. Gurpeets (2023) post got me interested in the cowsay program. I checked the manual page with ```man cowsay```.
+
+![mancowsay](Screenshots/2/mancowsay.png)
+
+![man](Screenshots/2/man.png)
+
+I made a cow and Tux say Hello! Got the ```-f tux``` from linux.fi (s.a) post.
+
+![cowsay](Screenshots/2/cowsay.png)
+
+![tuxsay](Screenshots/2/tuxsay.png)
+
+I was done with this at 1:04 PM. 
 
 ### Important directories
 
-I was instructed to find and show the important directories explained in the post by Tero (Karvinen 2020). These were ```/``` ```/home/``` ```/home/[username]/``` ```/etc/``` ```/media/``` ```/var/log/```. I started at 1:08 PM. First was the root directory. I went there with ```cd /``` and double checked it with ```pwd```. Then I used ls to list the contents. Next up was the home directory. I traversed there with ```cd home/```. As I used the tab key to speed up the process it completed the home/. Here was my users home directory. I traversed there with ```cd juusov/```. Then to move into /etc/ I used cd ```cd /etc/``` to jump there instantly. Then I jumped into /media/ with ```cd /media/```. Then traversed to the /var/log/ with ```cd /var/log/```. Then I just jumped back to /var/ with ```cd ..```. I was done at 1:16 PM. Traversing in the cli is fast but reporting every move at the same time is slow.
+I was instructed to find and show the important directories explained in the post by Tero (Karvinen 2020). These were ```/``` ```/home/``` ```/home/[username]/``` ```/etc/``` ```/media/``` ```/var/log/```. I started at 1:08 PM. First was the root directory. I went there with ```cd /``` and double checked it with ```pwd```.
+
+![cdroot](Screenshots/2/cdroot.png)
+
+Then I used ls to list the contents.
+
+![lsroot](Screenshots/2/lsroot.png)
+
+Next up was the home directory. I traversed there with ```cd home/```.
+
+![cdhome](Screenshots/2/cdhome.png)
+
+As I used the tab key to speed up the process it completed the home/. Here was my users home directory.
+
+![lshome](Screenshots/2/lshome.png)
+
+I traversed there with ```cd juusov/```. Then to move into /etc/ I used cd ```cd /etc/``` to jump there instantly.
+
+![etsy](Screenshots/2/etsy.png)
+
+Then I jumped into /media/ with ```cd /media/```.
+
+![media](Screenshots/2/media.png)
+
+Then traversed to the /var/log/ with ```cd /var/log/```.
+
+![logls](Screenshots/2/logls.png)
+
+Then I just jumped back to /var/ with ```cd ..```.
+
+![varls](Screenshots/2/varls.png)
+
+I was done at 1:16 PM. Traversing in the cli is fast but reporting every move at the same time is slow.
 
 ### Using grep
 
-I started this at 1:32 PM. First I wanted to see if the bluetooth service was enabled or disabled so I used ```sudo service --status-all | grep bluetooth```. The output showed that the bluetooth service were in fact disabled. I learned the ```service --status-all``` command some time ago when I learned about Linux hardening checklists. I moved into the /bin directory with ```cd bin```. There I checked the man page of grep with ```man grep``` because I wanted to find a way of using grep to find the absolute value. I found that it can be done with ```grep -w```. Then I decided to search grep with grep from the /bin directory. I did this with ```ls | grep -w grep```. This is the output without -w. Here I checked the error logs and I wanted to find error messages that were associated with sudo. So I used ```sudo journalctl -p err | grep sudo```. I found the -p err from journalctl manual with ```man journalctl```. Played around a bit and checked possible emerengy and critical logs aswell. I was done at 2:08 PM.
+I started this at 1:32 PM. First I wanted to see if the bluetooth service was enabled or disabled so I used ```sudo service --status-all | grep bluetooth```.
+
+![service](Screenshots/2/service.png)
+
+The output showed that the bluetooth service were in fact disabled. I learned the ```service --status-all``` command some time ago when I learned about Linux hardening checklists. I moved into the /bin directory with ```cd bin```. There I checked the man page of grep with ```man grep``` because I wanted to find a way of using grep to find the absolute value. I found that it can be done with ```grep -w```. Then I decided to search grep with grep from the /bin directory. I did this with ```ls | grep -w grep```.
+
+![grep](Screenshots/2/grep.png)
+
+This is the output without -w.
+
+![grepgrep](Screenshots/2/grepgrep.png)
+
+Here I checked the error logs and I wanted to find error messages that were associated with sudo. So I used ```sudo journalctl -p err | grep sudo```.
+
+![err](Screenshots/2/err.png)
+
+I found the -p err from journalctl manual with ```man journalctl```. Played around a bit and checked possible emerengy and critical logs aswell.
+
+![crit](Screenshots/2/crit.png)
+
+I was done at 2:08 PM.
 
 ### Using pipes
 
-At 2:12 PM I ran this ```systemctl | grep sudo | less``` command to read sudo logs with less. Closed it with q. I was done at 2:14 PM.
+At 2:12 PM I ran this ```journalctl | grep sudo | less``` command to read sudo logs with less.
+
+![errless](Screenshots/2/errless.png)
+
+Closed it with q. I was done at 2:14 PM.
 
 ### Log
 
-I purposely caused a mistake when writing sudo pass to check the event with journalctl. I used ```journalctl -p err | grep sudo``` to find this event. Then I started ```journalctl -f``` on one terminal and opened a second one. With the second terminal I created a user with ```sudo adduser testi```. Then I deleted the user "testi" with ```sudo userdel testi```. Both of these succesful events can be seen on the journalctl log. At 2:38 PM I was done.
+I purposely caused a mistake when writing sudo pass to check the event with journalctl. I used ```journalctl -p err | grep sudo``` to find this event.
+
+![passfail](Screenshots/2/passfail.png)
+
+Then I started ```journalctl -f``` on one terminal and opened a second one. With the second terminal I created a user with ```sudo adduser testi```. Then I deleted the user "testi" with ```sudo userdel testi```. Both of these succesful events can be seen on the journalctl log.
+
+![success](Screenshots/2/success.png)
+
+At 2:38 PM I was done.
 
 
 # References
