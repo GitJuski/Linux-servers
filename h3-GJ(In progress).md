@@ -149,11 +149,51 @@ I was done at 12:55 PM. At this point I decided to have a lunch break since I ha
 
 ## Name based virtual host (optional)
 
-At 5:41 PM I'm back in business. My task was to simulate a name service with the hosts file. I've done this once before but I decided to do it again with the hattu website. I started the VM once more and ran ```sudo update```. Then I needed to make changes to the hosts file. I opened with sudoedit. Here we can see that I've added the muumi.example.com already. Then I added the hattu.example.com right after muumi. Ctrl + X, Y and enter to save and exit. To test this I opened the browser and types hattu.example.com. And it works! And to show that this isn't some type of fluke, I added the letter s to the url and it doesn't work since the url is wrong. I was done at 5:50 PM.
+At 5:41 PM I'm back in business. My task was to simulate a name service with the hosts file. I've done this once before but I decided to do it again with the hattu website. I started the VM once more and ran ```sudo update```. Then I needed to make changes to the hosts file. I opened it with sudoedit.
+
+![32](Screenshots/3/32.png)
+
+Here we can see that I've added the muumi.example.com already.
+
+![33](Screenshots/3/33.png)
+
+Then I added the hattu.example.com right after muumi. Ctrl + X, Y and enter to save and exit.
+
+![34](Screenshots/3/34.png)
+
+To test this I opened the browser and typed hattu.example.com. And it works!
+
+![35](Screenshots/3/35.png)
+
+And to show that this isn't some type of fluke, I added the letter s to the url and it doesn't work since the url is wrong.
+
+![36](Screenshots/3/36.png)
+
+I was done at 5:50 PM.
 
 ## Two websites with two names (optional)
 
-Here I was supposed configure two websites with the single device. I started at 5:51 PM and first I decided to quickly check the "name-based virtual host support" page from Apache (s.a). I clearly states how it's done so I got to work. I opened the enabled conf which was the hattu.example.com.conf and added the muumi details as another virtualhost. This time I decided to use NANO and this time also I wrote the info manually. Restarted for a good measure. And there we have it I got both working. I didn't need to add the muumi.example.com again to the hosts file since I had added it way before. Here's the last look at the current hosts file. I was done at 6:10 PM.
+Here I was supposed configure two websites with the single device. I started at 5:51 PM and first I decided to quickly check the "name-based virtual host support" page from Apache (s.a). I clearly states how it's done so I got to work. I opened the enabled conf which was the hattu.example.com.conf and added the muumi details as another virtualhost.
+
+![38](Screenshots/3/38.png)
+
+![39](Screenshots/3/39.png)
+
+This time I decided to use NANO and this time also I wrote the info manually. Restarted for a good measure.
+
+![40](Screenshots/3/40.png)
+
+And there we have it, I got both working.
+
+![41](Screenshots/3/41.png)
+
+![42](Screenshots/3/42.png)
+
+I didn't need to add the muumi.example.com again to the hosts file since I had added it way before. Here's the last look at the current hosts file.
+
+![43](Screenshots/3/43.png)
+
+I was done at 6:10 PM.
 
 ## Get the Github Education Pack (optional)
 
