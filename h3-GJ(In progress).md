@@ -4,8 +4,11 @@ In assignment x by Tero (Karvinen 2024) I'm going to summarize two different pos
 
 # Name-based virtual host support summed up
 
+COMING SOON...
+
 # name based virtual hosts on apache - multiple websites to single IP address summed up
 
+COMING SOON...
 
 # Main assignment
 
@@ -143,8 +146,15 @@ I used curl and curl -I at 12:53 PM to fetch information from the new hattu webs
 
 I was done at 12:55 PM. At this point I decided to have a lunch break since I had a lecture coming up at 2:00 PM.
 
-## Get the Github Education Pack (optional)
 
 ## Name based virtual host (optional)
 
+At 5:41 PM I'm back in business. My task was to simulate a name service with the hosts file. I've done this once before but I decided to do it again with the hattu website. I started the VM once more and ran ```sudo update```. Then I needed to make changes to the hosts file. I opened with sudoedit. Here we can see that I've added the muumi.example.com already. Then I added the hattu.example.com right after muumi. Ctrl + X, Y and enter to save and exit. To test this I opened the browser and types hattu.example.com. And it works! And to show that this isn't some type of fluke, I added the letter s to the url and it doesn't work since the url is wrong. I was done at 5:50 PM.
+
 ## Two websites with two names (optional)
+
+Here I was supposed configure two websites with the single device. I started at 5:51 PM and first I decided to quickly check the "name-based virtual host support" page from Apache (s.a). I clearly states how it's done so I got to work. I opened the enabled conf which was the hattu.example.com.conf and added the muumi details as another virtualhost. This time I decided to use NANO and this time also I wrote the info manually. Restarted for a good measure. And there we have it I got both working. I didn't need to add the muumi.example.com again to the hosts file since I had added it way before. Here's the last look at the current hosts file. I was done at 6:10 PM.
+
+## Get the Github Education Pack (optional)
+
+COMING SOON...
