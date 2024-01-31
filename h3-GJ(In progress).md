@@ -24,3 +24,17 @@ at 11:27 AM I opened the access logs with ```sudo tail /var/log/apache2/access.l
 ## New website hattu.example.com
 
 After a small break I started working on this task. It was 12:09 PM. First I created the configuration file for hattu.example.com. While using my muumi.example.com config file as a reference I found a couple of typos. I had <Directory> ... > and my closing had </Virtualhost> with a h lowercased. I decided to check the syntax again and it says that the syntax is ok like it said when I created it. Seems like these typos don't matter that much. Anyway I made a config file for hattu.example.com with these typos corrected. I wrote the whole thing manually so it would be better engraved into my brain. Disabled muumi config and enabled hattu config. Then I tested the config and it seems to be ok. The warning about the documentroot was expected since I didn't create the directory yet. Next I created the directory by jumping to the publicwebsite directory. Created the correct directory and jumped there. made an index.htlm file. Restarted apache2 and opened FIrefox. It worked. Opened the index with micro once again to write some HTML code into it. Wrote some code and checked the site once more. I was done at 12:41 PM.
+
+## A valid HTML5 site
+
+Navigated to HTML5 validator site at 12:43 PM. I just opened the browser and typed HTLM5 validator and opened the first one since I've used it a couple of times before. Then I realized that I was at using my host machine for this and changed back to the virtual machine and I redid the process. I copied the code and inserted it into the validator. The page was valid! I was done at 12:48 PM.
+
+## curl -I and curl
+
+I used curl and curl -I at 12:53 PM to fetch information from the new hattu website. I was done at 12:55 PM. At this point I decided to have a lunch break since I had a lecture coming up at 2:00 PM.
+
+## Get the Github Education Pack (optional)
+
+## Name based virtual host (optional)
+
+## Two websites with two names (optional)
