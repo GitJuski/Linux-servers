@@ -248,7 +248,37 @@ I was done at 6:10 PM.
 
 ## Get the Github Education Pack (optional)
 
-On the February 1st, 2024 at 3:24 PM I started doing this task. I had my browser opened already since I was writing this at the same time and I did the summarization tasks just before. First I opened a new tab and typed github education. The first result seemed legit. Opened the site and clicked here. There I clicked sign up. I had to add my school email into my account first so I did it. Opened the account and inserted my school email. Verified the email address and went back to the student pack site. Selected my school account and hit continue. Had to enable location to verify affiliation with the school. Then had to take a picture as another proof. Went to opintopolku.fi and took a screenshot that had the school name, status and dates on it. Couln't upload the picture so I took a picture of a picture with my laptops webcam. Submitted it and this was the result. Well I'm currently living in Vaasa so I wasn't close to the school and there is no indication that I study remotely. So I just decided to drop this task since I dindn't have that much time to be wasted and the task was optional as well. I'll probably try again some other time when I'm in Helsinki...
+On the February 1st, 2024 at 3:24 PM I started doing this task. I had my browser opened already since I was writing this at the same time and I did the summarization tasks just before. First I opened a new tab and typed github education.
+
+![44](Screenshots/3/44.png)
+
+The first result seemed legit. Opened the site and clicked here.
+
+![45](Screenshots/3/45.png)
+
+![46](Screenshots/3/46.png)
+
+There I clicked sign up.
+
+![47](Screenshots/3/47.png)
+
+I had to add my school email into my account first so I did it.
+
+![48](Screenshots/3/48.png)
+
+Opened the account and inserted my school email. Verified the email address and went back to the student pack site. Selected my school account and hit continue.
+
+![49](Screenshots/3/49.png)
+
+Had to enable location to verify affiliation with the school. Then had to take a picture as another proof. Went to opintopolku.fi and took a screenshot that had the school name, status and dates on it. Couln't upload the picture so I took a picture of a picture with my laptops webcam.
+
+![50](Screenshots/3/50.png)
+
+Submitted it and this was the result.
+
+![51](Screenshots/3/51.png)
+
+Well I'm currently living in Vaasa so I wasn't close to the school and there is no indication that I study remotely. So I just decided to drop this task since I dindn't have that much time to be wasted and the task was optional as well. I'll probably try again some other time when I'm in Helsinki...
 
 # References
 
