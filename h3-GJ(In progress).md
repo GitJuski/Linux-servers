@@ -248,7 +248,7 @@ I was done at 6:10 PM.
 
 ## Get the Github Education Pack (optional)
 
-COMING SOON...
+On the February 1st, 2024 at 3:24 PM I started doing this task. I had my browser opened already since I was writing this at the same time and I did the summarization tasks just before. First I opened a new tab and typed github education. The first result seemed legit. Opened the site and clicked here. There I clicked sign up. 
 
 # References
 
