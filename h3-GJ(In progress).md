@@ -141,7 +141,7 @@ Created the correct directory and jumped there. made an index.htlm file.
 
 ![21](Screenshots/3/21.png)
 
-Restarted apache2 and opened FIrefox.
+Restarted apache2 and opened Firefox.
 
 ![22](Screenshots/3/22.png)
 
