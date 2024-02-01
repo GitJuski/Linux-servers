@@ -212,6 +212,6 @@ COMING SOON...
 
 Apache, s.a. Name-based Virtual Host Support. Available at [https://httpd.apache.org/docs/2.4/vhosts/name-based.html](https://httpd.apache.org/docs/2.4/vhosts/name-based.html). Read on January 31, 2024.
 
-Karvinen, 2024
+Karvinen, January 11, 2024. Linux Palvelimet 2024 alkukevät. Available at [https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/](https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/).
 
-Karvinen, 
+Karvinen, April 10, 2018. Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address. Available at [https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/](https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Read on January 31, 2024.
