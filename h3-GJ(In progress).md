@@ -6,18 +6,35 @@ In assignment x by Tero (Karvinen 2024) I'm going to summarize two different pos
 
 - In IP-based virtual hosting different hosts need to have different IP addresses, since the IP addresses are used to find the correct hosts. (Apache s.a.)
 - On the other hand with name-based virtual hosting, names can be used to determine the correct hosts. This enables the usage of a single IP address by multiple hosts. (Apache s.a.)
-- Apache (s.a) states that it's recommended to use the name-based virtual hosting whenever it's possible. Since multiple hosts can be mapped to a single IP address it doesn't drain the already scarse pool of IP addresses the same way like IP-based virtual hosting would (Apache s.a). Apache (s.a) also states that the setting up process of a name-based virtual host is pretty simple.
-- Name-based virtual hosting builds on IP-based virtual hosting (Apache s.a). This means that the name-based virtual hosting still maps the correct names with the best best posible hosts with the best IP address (Apache s.a). To bypass this a (*) sign can be used inside the virtualhost directives (Apache s.a). For example <VirtualHost *:80> means that the IP address is irrelevant and it uses the port 80. The * sign can be replaced with an IP address.
+- Apache (s.a) states that it's recommended to use the name-based virtual hosting whenever it's possible. Since multiple hosts can be mapped to a single IP address, it doesn't drain the already scarse pool of IP addresses the same way like IP-based virtual hosting would (Apache s.a). Apache (s.a) also states that the setting up process of a name-based virtual host is pretty simple.
+- Name-based virtual hosting builds on IP-based virtual hosting (Apache s.a). This means that the name-based virtual hosting still maps the correct names with the possible hosts with the best IP address (Apache s.a). To bypass this a (*) sign can be set inside the virtualhost directives (Apache s.a). For example <VirtualHost *:80> means that the IP address is irrelevant and it uses the port 80. The * sign can be replaced with an IP address.
 - When two or more virtual hosts share the same IP address and port configuration, the ServerName and ServerAlias are used to map the request to the correct host. (Apache s.a)
 - Apache (s.a) notes that the virtual host matching can break if the ServerName directive is left out of a name-based configuration.
 - When a the ServerName or ServerAlias doesn't match but the IP address and port combination is correct, the first virtual host listed on the configuration file will be used (Apache s.a).
 - Different virtualhosts are separated by using the <VirtualHost> </Virtualhost> block (Apache s.a). ServerName and DocumentRoot are the minimum directives that need to be configured inside the virtualhost block (Apache s.a).
-- The ServerAlias can be used to configure a server that more accessible (Apache s.a). For example a ServerName can be shoe.example.com and the ServerAlias can be `www.shoe.example.com` or something like `*.shoe.example.com`. With this the same site can be accessed by using `www.shoe.example.com` or `shoe.example.com`. The * sign is again a wildcard here (Apache s.a).
-- Different types of directives can be used inside the VirtualHost block to make the configurations more precise (Apache s.a). For example I added a couple of extra lines into the configuration files. These can be seen in the report below.
+- The ServerAlias can be used to configure a server that is more accessible (Apache s.a). For example a ServerName can be shoe.example.com and the ServerAlias can be `www.shoe.example.com` or something like `*.shoe.example.com`. With this the same site can be accessed by using `www.shoe.example.com` or `shoe.example.com`. The * sign is again a wildcard here (Apache s.a).
+- Different types of directives can be used inside the VirtualHost block to make the configurations more precise and unique (Apache s.a). For example I added a couple of extra lines into the configuration files. These can be seen in the report below.
 
 # name based virtual hosts on apache - multiple websites to single IP address summed up
 
-COMING SOON...
+- Tero (Karvinen 2018) highlights the same positive feature of name-based configuration by stating that multiple domain names can share the same IP address.
+- To install Apache a command like `sudo apt-get -y install apache2` can be used (Karvinen 2018). `-y` just answers the yes/no question automatically. Karvinen (2018) states that with this command `echo "Default"|sudo tee /var/www/html/index.html` the default website can be replaced.
+- Sudoedit is used to edit the config file which can be found in `/etc/apache2/sites-available/`. To edit it a command like `sudoedit /etc/apache2/sites-available/filename.conf. (Karvinen 2018)
+- Here is a great example of a VirtualHost by Karvinen (2018)
+
+      <VirtualHost *:80>
+       ServerName pyora.example.com
+       ServerAlias www.pyora.example.com
+       DocumentRoot /home/xubuntu/publicsites/pyora.example.com
+       <Directory /home/xubuntu/publicsites/pyora.example.com>
+         Require all granted
+       </Directory>
+      </VirtualHost>
+
+- `sudo a2ensite pyora.example.com` enables the conf (Karvinen 2018).  After enabling the conf, `sudo systemctl restart apache2` must be used for changes to take effect (Karvinen 2018).
+- Then a correct directory must be made. Tero (Karvinen 2018) brings up this example `mkdir -p /home/xubuntu/publicsites/pyora.example.com/`. To create the web page, an index.html is created using this example `echo pyora > /home/xubuntu/publicsites/pyora.example.com/index.html` (Karvinen 2018).
+- To test with curl, `curl -H 'Host: pyora.example.com' localhost` and `curl localhost` are used (Karvinen 2018).
+- To locally simulate a name service, the hosts file can be edited with `sudoedit /etc/hosts` (Karvinen 2018).
 
 # Main assignment
 
@@ -85,6 +102,17 @@ Now those two work.
 
 ![15](Screenshots/3/15.png)
 
+    127.0.0.1 - - [31/Jan/2024:11:57:31 +0200] "GET / HTTP/1.1" 200 477 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:109.0)     
+    Gecko/20100101 Firefox/115.0"
+
+First I'll explain the things I know myself and the rest I'll explain using references.
+
+First 127.0.0.1 is the IP address. This time it's the loopback address also knows as localhost. Next up is the [date/month/year:time and timezone (+0200)]. "GET / HTTP/1.1" means that the device requested information from the site. HTTP/1.1 is the protocol that was used. 200 means that the response was ok. The last bit says that Mozilla Firefox is the browser used in a Linux OS.
+
+Now with using a post by Apache (s.a. Log files) as a reference. The - - at the start means that the requested information is not available (Apache s.a. Log files). The number after the 200 should mean the size of an object returned (Apache s.a. Log files). In this case it would be 477 but after it, is a "-" which should mean that no content was returned (Apache s.a. log files). After analyzing the document about logs (Apache s.a. log files) I realized that the "-" in this context means that the referer information was not available. The last bit with browser info is called "user agent" (Apache s.a. log files). Mozilla/5.0 says that the browser is Mozilla compatible (Mozilla s.a). (X11; Linux x86_64; rv:109.0) is the platform used and rv:109.0 is the Gecko version (Mozilla s.a). Gecko/20100101 says that the browser is based on Gecko and the 20100101 is always the same (Mozilla s.a). Firefox/115.0 is the browser and the version (Mozilla s.a).
+
+There is a line where the status code is 404 in my screenshot. `"GET /favicon.ico HTTP/1.1" 404 487 "http://localhost/"`. Here the client which was I tried to get the /favicon.ico with HTTP/1.1 protocol. Unfortunately it was unsuccesful since the return code was error code of 404. We can see the referer here which was http://localhost/.
+
 I was happy and done at 11:59 AM.
 
 ## New website hattu.example.com
@@ -151,7 +179,21 @@ I used curl and curl -I at 12:53 PM to fetch information from the new hattu webs
 
 ![30](Screenshots/3/30.png)
 
+curl returned the source code of hattu.example.com.
+
 ![31](Screenshots/3/31.png)
+
+      HTTP/1.1 200 OK
+      Date: Wed, 31 Jan 2024 10:54:10 GMT
+      Server: Apache/2.4.57 (Debian)
+      Last-Modified: Wed, 31 Jan 2024 10:40:25 GMT
+      Etag: "ea-6103b81b1d414"
+      Accept-Ranges: bytes
+      Content-Length: 234
+      Vary: Accept-Encoding
+      Content-Type: text/html
+
+HTTP/1.1 is the protocol used and 200 OK means that the response status was ok. Date: has the date, month, year, time and timezone. Server: tells us that the server is Apache version 2.4.57 and it's running on Debian. Next line says when the page was last modified at. Content-type is text/html. Content-Length: is the size of the response. Mozilla states (Mozilla s.a) that an etag (entity tag) is a unique tag for a resource version.
 
 I was done at 12:55 PM. At this point I decided to have a lunch break since I had a lecture coming up at 2:00 PM.
 
@@ -212,6 +254,12 @@ COMING SOON...
 
 Apache, s.a. Name-based Virtual Host Support. Available at [https://httpd.apache.org/docs/2.4/vhosts/name-based.html](https://httpd.apache.org/docs/2.4/vhosts/name-based.html). Read on January 31, 2024.
 
+Apache, s.a. Log Files. Available at [https://httpd.apache.org/docs/2.4/logs.html](https://httpd.apache.org/docs/2.4/logs.html). Read on February 1, 2024.
+
 Karvinen, January 11, 2024. Linux Palvelimet 2024 alkukevät. Available at [https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/](https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/).
 
 Karvinen, April 10, 2018. Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address. Available at [https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/](https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Read on January 31, 2024.
+
+Mozilla s.a. User-Agent. Mdn web docs. Available at [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent). Read on February 1, 2024.
+
+Mozilla s.a. ETag. Mdn web docs. Available at [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag). Read on February 1, 2024.
