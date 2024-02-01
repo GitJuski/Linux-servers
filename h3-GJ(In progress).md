@@ -4,7 +4,16 @@ In assignment x by Tero (Karvinen 2024) I'm going to summarize two different pos
 
 # Name-based virtual host support summed up
 
-COMING SOON...
+- In IP-based virtual hosting different hosts need to have different IP addresses, since the IP addresses are used to find the correct hosts. (Apache s.a.)
+- On the other hand with name-based virtual hosting, names can be used to determine the correct hosts. This enables the usage of a single IP address by multiple hosts. (Apache s.a.)
+- Apache (s.a) states that it's recommended to use the name-based virtual hosting whenever it's possible. Since multiple hosts can be mapped to a single IP address it doesn't drain the already scarse pool of IP addresses the same way like IP-based virtual hosting would (Apache s.a). Apache (s.a) also states that the setting up process of a name-based virtual host is pretty simple.
+- Name-based virtual hosting builds on IP-based virtual hosting (Apache s.a). This means that the name-based virtual hosting still maps the correct names with the best best posible hosts with the best IP address (Apache s.a). To bypass this a (*) sign can be used inside the virtualhost directives (Apache s.a). For example <VirtualHost *:80> means that the IP address is irrelevant and it uses the port 80. The * sign can be replaced with an IP address.
+- When two or more virtual hosts share the same IP address and port configuration, the ServerName and ServerAlias are used to map the request to the correct host. (Apache s.a)
+- Apache (s.a) notes that the virtual host matching can break if the ServerName directive is left out of a name-based configuration.
+- When a the ServerName or ServerAlias doesn't match but the IP address and port combination is correct, the first virtual host listed on the configuration file will be used (Apache s.a).
+- Different virtualhosts are separated by using the <VirtualHost> </Virtualhost> block (Apache s.a). ServerName and DocumentRoot are the minimum directives that need to be configured inside the virtualhost block (Apache s.a).
+- The ServerAlias can be used to configure a server that more accessible (Apache s.a). For example a ServerName can be shoe.example.com and the ServerAlias can be www.shoe.example.com or something like *.shoe.example.com. With this the same site can be accessed by using www.shoe.example.com or shoe.example.com. The * sign is again a wildcard here (Apache s.a).
+- Different types of directives can be used inside the VirtualHost block to make the configurations more precise (Apache s.a). For example I added a couple of extra lines into the configuration files. These can be seen in the report below.
 
 # name based virtual hosts on apache - multiple websites to single IP address summed up
 
@@ -198,3 +207,11 @@ I was done at 6:10 PM.
 ## Get the Github Education Pack (optional)
 
 COMING SOON...
+
+# References
+
+Apache, s.a. Name-based Virtual Host Support. Available at [https://httpd.apache.org/docs/2.4/vhosts/name-based.html](https://httpd.apache.org/docs/2.4/vhosts/name-based.html). Read on January 31, 2024.
+
+Karvinen, 2024
+
+Karvinen, 
