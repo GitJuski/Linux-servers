@@ -12,7 +12,7 @@ In assignment x by Tero (Karvinen 2024) I'm going to summarize two different pos
 - Apache (s.a) notes that the virtual host matching can break if the ServerName directive is left out of a name-based configuration.
 - When a the ServerName or ServerAlias doesn't match but the IP address and port combination is correct, the first virtual host listed on the configuration file will be used (Apache s.a).
 - Different virtualhosts are separated by using the <VirtualHost> </Virtualhost> block (Apache s.a). ServerName and DocumentRoot are the minimum directives that need to be configured inside the virtualhost block (Apache s.a).
-- The ServerAlias can be used to configure a server that more accessible (Apache s.a). For example a ServerName can be shoe.example.com and the ServerAlias can be www.shoe.example.com or something like *.shoe.example.com. With this the same site can be accessed by using www.shoe.example.com or shoe.example.com. The * sign is again a wildcard here (Apache s.a).
+- The ServerAlias can be used to configure a server that more accessible (Apache s.a). For example a ServerName can be shoe.example.com and the ServerAlias can be `www.shoe.example.com` or something like `*.shoe.example.com`. With this the same site can be accessed by using `www.shoe.example.com` or `shoe.example.com`. The * sign is again a wildcard here (Apache s.a).
 - Different types of directives can be used inside the VirtualHost block to make the configurations more precise (Apache s.a). For example I added a couple of extra lines into the configuration files. These can be seen in the report below.
 
 # name based virtual hosts on apache - multiple websites to single IP address summed up
