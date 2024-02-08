@@ -16,7 +16,7 @@ COMING SOON...
 
 ## Essential information
 
-I started this task at 9:41 AM. I was at home in Vaasa at the time. I used the picture I took last time since it was still valid. In addition to the information on the picture, I used a wireless connection which was great and I had 386 GB of free space on my SSD. Also I decided to list the specs of my virtual machine. I grabbed the information by opening Virtualbox and selecting the correct vm.
+I started this task at 9:41 AM on February 7th. I was at home in Vaasa at the time. I used the picture I took last time since it was still valid. In addition to the information on the picture, I used a wireless connection which was great and I had 386 GB of free space on my SSD. Also I decided to list the specs of my virtual machine. I grabbed the information by opening Virtualbox and selecting the correct vm.
 
 ## Renting a vm from the cloud
 
@@ -30,7 +30,9 @@ At 11:17 AM I ran `sudo apt update` and `sudo apt upgrade`. Had a problem with u
 
 ## Web server
 
-COMING SOON...
+On February 8th I continued my work. I started this doing task at 8:55 AM. Some changes to the essential information include the change of location and network connectivity. I arrived in Helsinki yesterday evening. So at this time I was in Helsinki visiting relatives and I was using a wireless connection that was notably slower than my own at home.
+
+First I launched my VM by opening the Virtualbox application and hitting start. I opened the terminal and ran `sudo apt update`. Then I had to start the server residing in the cloud since I powered it off last time. So I searched for Linode, opened the correct site, logged in, selected the correct VM and hit "power on". I connected via ssh. When I was in I ran `sudo apt update`. I installed Apache2. I then enabled the service but to my surprise it was already enabled. After this I checked the default site with curl. I installed micro, navigated to the `/etc/apache2/sites-available` directory with `cd /etc/apache2/sites-available` made a new configuration file in `/etc/apache2/sites-available`. I'm surprised on how well I remembered this basic conf. I only needed to cheat on the "require all granted" part. Anyways then I navigated to the /home/juski dir with `cd`. There I created the correct directories and I then created an index.html file. I created another hole to test the default conf. Then I disabled the default conf and enabled my conf. I tested the conf and it was ok. Then I restarted Apache. Okay I had a problem once again. I added the error log into my new config file and opened the site again to log the error. Well the error.log has only earlier errors. Well after restarting apache, opening the site and opening the logs I realized that it logs the error but in different time... After a while of checking permission I found that the /home has tight permission and that it is probably the problem with this. Well at this point I was closer to the solution but I got some things to take care of so I had to stop here and continue this later. It was 10:53 AM at that time.
 
 ## Domain name
 
