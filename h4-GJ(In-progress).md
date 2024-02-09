@@ -1,6 +1,6 @@
 # Introduction
 
-In task x I was assigned to summarize two different posts. The first post is a report by Susanna (lehto 2022) titled "Teoriasta käytäntöön pilvipalvelimen avulla (h4)" and it can be found at [https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/](https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/) and the second post is guide by Tero (Karvinen 2017) titled "First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS" and it can be found at [https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/](https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/).
+In task x (Karvinen 2024), I was assigned to summarize two different posts. The first post is a report by Susanna (lehto 2022) titled "Teoriasta käytäntöön pilvipalvelimen avulla (h4)" and it can be found at [https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/](https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/) and the second post is guide by Tero (Karvinen 2017) titled "First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS" and it can be found at [https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/](https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/).
 
 The rest of the assignment is again divided into subtasks. I'm was supposed to rent a vm from the cloud, configure it and make it host a website. Finally I also had to rent a domain name which I already had done before this assignment.
 
@@ -88,7 +88,7 @@ At 11:17 AM I ran `sudo apt update` and `sudo apt upgrade`. Had a problem with u
 
 ![17](Screenshots/4/17.png)
 
-I just clicked an option that said "install a maintainers version". I then searched for it on the web and found this. After reading the answer in the digitalocean community post I came to the conclusion that I made the right choice since I didn't do any modifications to the sshd config beforehand. Then I created a user and added it to the sudo and adm groups.
+I just clicked an option that said "install a maintainers version". I then searched for it on the web and found a community post (Digitalocean 2023). After reading the answer in the digitalocean community post I came to the conclusion that I made the right choice since I didn't do any modifications to the sshd config beforehand. Then I created a user and added it to the sudo and adm groups (Karvinen 2017).
 
 ![18](Screenshots/4/18.png)
 
@@ -104,11 +104,11 @@ Double checked the groups.
 
 ![22](Screenshots/4/22.png)
 
-Locked the root password.
+Locked the root password (Karvinen 2017).
 
 ![23](Screenshots/4/23.png)
 
-Then I disabled the root login by opening the config file with `sudoedit /etc/ssh/sshd_config` and changing a value to no.
+Then I disabled the root login by opening the config file with `sudoedit /etc/ssh/sshd_config` and changing a value to no (Karvinen 2017).
 
 ![24](Screenshots/4/24.png)
 
@@ -148,7 +148,7 @@ I installed micro, navigated to the `/etc/apache2/sites-available` directory wit
 
 ![33](Screenshots/4/33.png)
 
-I'm surprised on how well I remembered this basic conf. I only needed to cheat on the "require all granted" part.
+I'm surprised on how well I remembered this basic conf. I only needed to cheat on the "require all granted" part. I used my own picture as a reference (GitJuski 2024).
 
 ![34](Screenshots/4/34.png)
 
@@ -180,13 +180,13 @@ Checked the site with IP address and I had a problem once again.
 
 ![43](Screenshots/4/43.png)
 
-I added the error log into my new config file and opened the site again to log the error.
+I added the error log into my new config file (GitJuski) and opened the site again to log the error.
 
 ![44](Screenshots/4/44.png)
 
 ![45](Screenshots/4/45.png)
 
-Well the error.log has only earlier errors.
+I opened the error logs with `sudo tail /var/log/apache2/error.log`. Well the error.log has only earlier errors.
 
 ![46](Screenshots/4/46.png)
 
@@ -204,7 +204,7 @@ After a while of checking permissions I found that the /home/juski has tight per
 
 Well at this point I was closer to the solution but I got some things to take care of so I had to stop here and continue this later. It was 10:53 AM at the time.
 
-I was back in business at 7:06 PM with a new mouse! Now I was in a bit of a pickle. I could mod the /home/juski dir permissions or I could use the /var/www/html as the documentroot. Either of these would probably fix the issue. I had a feeling that the permissions mod would create a security risk since I'm giving more permissions to /home/juski directory, On the other hand the whole point of this machine is to host a website and nothing else. I decided to try if the modification of permissions would work. So I found a command `namei -m` and I used `namei -m /home/juski/publicwebsite/`. The output clearly showed that the juski directory was missing permissions so I ran `sudo chmod +x juski`. After running this command an x spawned at the end and middle of the juski line. This essentially means that the group juski and others have x (excecute) permissions here.
+I was back in business at 7:06 PM with a new mouse! Now I was in a bit of a pickle. I could mod the /home/juski dir permissions or I could use the /var/www/html as the documentroot. Either of these would probably fix the issue. I had a feeling that the permissions mod would create a security risk since I'm giving more permissions to /home/juski directory, On the other hand the whole point of this machine is to host a website and nothing else. I decided to try if the modification of permissions would work. So I found a command `namei -m` (StackExchange, answer by user59736 2014) and I used `namei -m /home/juski/publicwebsite/`. The output clearly showed that the juski directory was missing permissions so I ran `sudo chmod +x juski`. After running this command an x spawned at the end and middle of the juski line. This essentially means that the group juski and others have x (excecute) permissions here.
 
 ![50](Screenshots/4/50.png)
 
@@ -244,7 +244,7 @@ There I clicked "manage". Here I opened the advanced dns tab and deleted the def
 
 ![59](Screenshots/4/59.png)
 
-I added two A-records with a 30min TTL (Time To Live).
+I added two A-records with a 30min TTL (Time To Live) (Namecheap 2021).
 
 ![60](Screenshots/4/60.png)
 
@@ -262,8 +262,14 @@ COMING SOON...
 
 Digitalocean. October 25, 2023. sudo apt upgrade, offers some questions? A community post. Available at [https://www.digitalocean.com/community/questions/sudo-apt-upgrade-offers-some-questions](https://www.digitalocean.com/community/questions/sudo-apt-upgrade-offers-some-questions). Read on February 7, 2024.
 
+GitJuski. .h3-GJ. Available at []().
+
 Karvinen, T. January 11, 2024. Linux Palvelimet 2024 alkukevät. Available at [https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/](https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/).
 
 Karvinen, T. September 19, 2017. First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS. Available at [https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/](https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/). Read on February 7, 2024.
 
 Lehto, S. February 14, 2022. Teoriasta käytäntöön pilvipalvelimen avulla (h4). Available at [https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/](https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/). Read on February 7, 2024.
+
+Namecheap. Updated on July 7, 2021. How can I set up an A (address) record for my domain?. Available at [https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain/](https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain/). Read on February 8, 2024.
+
+User57936 answer. February 6, 2014. Title of the question "View permission / owner of full directory tree". StackExchange. Available at [https://unix.stackexchange.com/questions/82361/view-permission-owner-of-full-directory-tree](https://unix.stackexchange.com/questions/82361/view-permission-owner-of-full-directory-tree). Read on February 8, 2024.
