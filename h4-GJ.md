@@ -40,7 +40,11 @@ I only needed to summarize parts "renting from the cloud", "secure the server wi
 
 ## Essential information
 
-I started this task at 9:41 AM on February 7th. I was at home in Vaasa at the time. I used the picture I took last time since it was still valid. In addition to the information on the picture, I used a wireless connection which was great and I had 386 GB of free space on my SSD. Also I decided to list the specs of my virtual machine. I grabbed the information by opening VirtualBox and selecting the correct VM.
+I started this task at 9:41 AM on February 7th. I was at home in Vaasa at the time. I used the picture I took last time since it was still valid.
+
+![0](Screenshots/3/1.png)
+
+In addition to the information on the picture, I used a wireless connection which was great and I had 386 GB of free space on my SSD. Also I decided to list the specs of my virtual machine. I grabbed the information by opening VirtualBox and selecting the correct VM.
 
 ![1](Screenshots/4/1.png)
 
