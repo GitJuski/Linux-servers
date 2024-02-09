@@ -254,15 +254,15 @@ I tested it pretty much immediately and it responded!
 
 I was done with this at 8:00 PM. After this I added the access logging into the website configuration. I wanted to use ssh keys so I decided to do it as an optional personal task the next day.
 
-## Optional task for personal use
+## Optional task for personal use (I will do this some other time)
 
-COMING SOON...
+I wanted to configure SSH keys, change the default port for SSH login, Check the SSH configurations thoroughly and make the site more appealing. Unfortunately I had other things to focus on so I decided to do this some other time when I have more time on my hands. So this part is still in "COMING SOON..." state.
 
 # References
 
 Digitalocean. October 25, 2023. sudo apt upgrade, offers some questions? A community post. Available at [https://www.digitalocean.com/community/questions/sudo-apt-upgrade-offers-some-questions](https://www.digitalocean.com/community/questions/sudo-apt-upgrade-offers-some-questions). Read on February 7, 2024.
 
-GitJuski. .h3-GJ. Available at []().
+GitJuski. February 1, 2024. h3-GJ. Github. Available at [https://github.com/GitJuski/Linux-servers/blob/main/h3-GJ.md](https://github.com/GitJuski/Linux-servers/blob/main/h3-GJ.md).
 
 Karvinen, T. January 11, 2024. Linux Palvelimet 2024 alkukevät. Available at [https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/](https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/).
 
