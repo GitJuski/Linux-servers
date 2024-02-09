@@ -10,7 +10,15 @@ COMING SOON...
 
 # "First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS" summed up
 
-COMING SOON...
+- With the GitHub education pack you can get some awesome perks such as but not limited to virtual private server and .me domain for a limited time (Karvinen 2017).
+- To create a virtual server on digital ocean one must register, add a credit card or a promo code, create a new resource, choose a datacenter near customers, configure a password or SSH keys and create the resource. Then it can be accessed with the public IP address and SSH. For example ssh root@IPaddres. Always give strong passwords! (karvinen 2017)
+- Karvinen (2017) guides to make a hole for SSH before enabling the firewall. A hole is made with `sudo ufw allow 22/tcp` (Karvinen 2017). 22 is the default SSH port and TCP is a protocol. To enable the firewall Tero (Karvinen 2017) says to use `sudo ufw enable`.
+- Karvinen (2017) says "One human, one account, named after this human.". First to create a user a command `sudo adduser username` is used and to add the user into different groups a command `sudo adduser username groupname` is used. (Karvinen 2017)
+- It is best practice to verify that the new user works as intended by opening a new local terminal and establishing an SSH connection with `ssh username@IPaddress (or domain name)` before closing the active connection on the other terminal (Karvinen 2017).
+- Then the root password can be locked with `sudo usermod --lock root` (Karvinen 2017). To disable the root login, changes must be made to the sshd_config file residing in /etc/ssh/. There a value "yes" needs to be changed to value "no" on a line that says "PermitRootLogin". After making changes to the configurations, the service must be restarted with `sudo service ssh restart`
+- Upgrading software is a must (Karvinen 2017). `sudo apt-get update` and `sudo apt-get upgrade` does the trick (Karvinen 2017).
+- Then you can start using it. Karvinen (2017) reminds to open a port for the server. For example 80/tcp would make connections using HTTP possible from the outside.
+- Domain name makes the site much more accessible. Namecheap is a good place for renting names. (Karvinen 2017)
 
 # The main task
 
@@ -256,7 +264,7 @@ I was done with this at 8:00 PM. After this I added the access logging into the 
 
 ## Optional task for personal use (I will do this some other time)
 
-I wanted to configure SSH keys, change the default port for SSH login, Check the SSH configurations thoroughly and make the site more appealing. Unfortunately I had other things to focus on so I decided to do this some other time when I have more time on my hands. So this part is still in "COMING SOON..." state.
+I wanted to configure SSH keys, change the default port for SSH login, Check the SSH configurations thoroughly and make the site more appealing. Unfortunately I had other things to focus on so I decided to do this some other time once I have more time on my hands. So this part is still in "COMING SOON..." state.
 
 # References
 
