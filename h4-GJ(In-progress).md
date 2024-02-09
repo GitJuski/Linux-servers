@@ -120,7 +120,7 @@ I just clicked an option that said, "install a maintainers version". I then sear
 
 ![20](Screenshots/4/20.png)
 
-Connected with the new account and it works.
+Connected with the new account and it worked.
 
 ![21](Screenshots/4/21.png)
 
@@ -150,11 +150,11 @@ This task was completed at 11:40 AM.
 
 On February 8th I continued my work. I started this doing task at 8:55 AM. Some changes to the essential information include the change of location and network connectivity. I arrived in Helsinki yesterday evening. So, at this time I was in Helsinki visiting relatives and I was using a wireless connection that was notably slower than mine at home.
 
-First, I launched my VM by opening the Virtualbox application and hitting start. I opened the terminal and ran `sudo apt update`. Then I had to start the server residing in the cloud since I powered it off last time. So, I searched for Linode, opened the correct site, logged in, selected the correct VM and hit "power on". I connected via ssh.
+First, I launched my VM by opening the Virtualbox application and hitting start. I opened the terminal and ran `sudo apt update`. Then I had to start the server residing in the cloud since I powered it off last time. So, I searched for Linode, opened the correct site, logged in, selected the correct VM and hit "power on". I then connected via ssh.
 
 ![28](Screenshots/4/28.png)
 
-When I was in I ran `sudo apt update`. I installed Apache2.
+When I was in I ran `sudo apt update` and installed Apache2.
 
 ![29](Screenshots/4/29.png)
 
@@ -210,11 +210,11 @@ I added the error log into my new config file (GitJuski) and opened the site aga
 
 ![45](Screenshots/4/45.png)
 
-I opened the error logs with `sudo tail /var/log/apache2/error.log`. Well, the error.log has only earlier errors.
+I opened the error logs with `sudo tail /var/log/apache2/error.log`. Well, the error.log had only earlier errors.
 
 ![46](Screenshots/4/46.png)
 
-After restarting Apache, opening the site and opening the logs I realized that it logs the error but in a different time...
+After restarting Apache, opening the site and opening the logs I realized that it logs the errors but in a different time...
 
 ![47](Screenshots/4/47.png)
 
