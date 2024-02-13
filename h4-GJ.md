@@ -250,7 +250,7 @@ I decided to play around with the permissions for a while to study them. In the 
 
 ## UPDATE February 13, 2024 11:08 AM. Decided to change the permissions a little.
 
-
+![update](Screenshots/4/update.png)
 
 ## UPDATE concluded
 
