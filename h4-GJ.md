@@ -320,6 +320,8 @@ Then I copied the public key over.
 
 ![update9](Screenshots/4/update9.png)
 
+![update10](Screenshots/4/update10.png)
+
 I checked that the key arrived.
 
 ![update11](Screenshots/4/update11.png)
