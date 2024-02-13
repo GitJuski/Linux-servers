@@ -252,6 +252,10 @@ I decided to play around with the permissions for a while to study them. In the 
 
 ![update](Screenshots/4/update.png)
 
+Update 2 February 13, 2024 1:55 PM. I ran into a problem with reading files in / so I changed the permissions there.
+
+![update2](Screenshots/4/update2.png)
+
 ## UPDATE concluded
 
 I made a short html page and tested it.
