@@ -300,7 +300,7 @@ I wanted to configure SSH keys, change the default port for SSH login, Check the
 
 I decided to add the keys. First I tested that I could still connect via ssh.
 
-![update3](Screenshots/4/update3.png)
+![update3](Screenshots/4/update3.1.png)
 
 I used exit to exit the connection and I checked that I didn't have any keys already.
 
@@ -337,6 +337,8 @@ I restarded the ssh with `sudo systemctl restart ssh` and I tried to connect wit
 ![update14](Screenshots/4/update14.png)
 
 Before closing the session I opened another terminal and connected. With this I had configured the keys.
+
+I had to draw on top of a couple of screenshots and update the names so I updated them at on February 13, 2024 at 3:09 PM.
 
 # References
 
