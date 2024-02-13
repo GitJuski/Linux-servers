@@ -296,6 +296,46 @@ I was done with this at 8:00 PM. After this I added the access logging into the 
 
 I wanted to configure SSH keys, change the default port for SSH login, Check the SSH configurations thoroughly and make the site more appealing. Unfortunately, I had other things to focus on so I decided to do this some other time once I have more time on my hands. So, this part is still in "COMING SOON..." state.
 
+## UPDATE February 13, 2024 2:43 PM.
+
+I decided to add the keys. First I tested that I could still connect via ssh.
+
+![update3](Screenshots/4/update3.png)
+
+I used exit to exit the connection and I checked that I didn't have any keys already.
+
+![update4](Screenshots/4/update4.png)
+
+Then I generated the keys.
+
+![update5](Screenshots/4/update5.png)
+
+![update6](Screenshots/4/update6.png)
+
+![update7](Screenshots/4/update7.png)
+
+Then I copied the public key over.
+
+![update8](Screenshots/4/update8.png)
+
+![update9](Screenshots/4/update9.png)
+
+I checked that the key arrived.
+
+![update11](Screenshots/4/update11.png)
+
+Then I edited the conf file to remove password logins.
+
+![update12](Screenshots/4/update12.png)
+
+![update13](Screenshots/4/update13.png)
+
+I restarded the ssh with `sudo systemctl restart ssh` and I tried to connect with another device without success.
+
+![update14](Screenshots/4/update14.png)
+
+Before closing the session I opened another terminal and connected. With this I had configured the keys.
+
 # References
 
 DigitalOcean. October 25, 2023. sudo apt upgrade, offers some questions? A community post. Available at [https://www.digitalocean.com/community/questions/sudo-apt-upgrade-offers-some-questions](https://www.digitalocean.com/community/questions/sudo-apt-upgrade-offers-some-questions). Read on February 7, 2024.
