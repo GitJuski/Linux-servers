@@ -248,6 +248,12 @@ I decided to play around with the permissions for a while to study them. In the 
 
 ![53](Screenshots/4/53.png)
 
+## UPDATE February 13, 2024 11:08 AM. Decided to change the permissions a little.
+
+
+
+## UPDATE concluded
+
 I made a short html page and tested it.
 
 ![54](Screenshots/4/54.png)
