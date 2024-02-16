@@ -55,4 +55,4 @@ I was done at 4:02 PM.
 
 ## Vagrant
 
-I started this task at 4:20 PM. Couldn't install virtualbox on this vm so I started looking for answers. After a long while of researching I decided to just install it on my Windows instead. I downloaded it. After it was done I installed it and after the installation I had to reboot.
+I started this task at 4:20 PM. Couldn't install virtualbox on this vm so I started looking for answers. After a long while of researching I decided to just install it on my Windows instead. I downloaded it. After it was done I installed it and after the installation I had to reboot. I opened Windows powershell and created a folder vagrant inside my users folder with `mkdir vagrant` (now I knew that the vagrant init command creates a file since I quickly tested vagrant during the last lecture, althought I only installed the vagrant and not the VirtualBox which is why it didn't work. Also I had a couple of minutes to do so, so that's why I didn't go any further with it.).  I navigated there and created the vm. When it was created I connected via SSH. Finally I exited with exit and destroyed the machine. I was done at 5:32 PM.
