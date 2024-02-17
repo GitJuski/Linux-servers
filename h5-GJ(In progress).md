@@ -1,11 +1,11 @@
 # Introduction
 
-It's time for homework assignment number five. There is no need to summarize posts this time. The assignment is divided into subtasks a, b, c and an optional task m.
+It's time for homework assignment number five. There was no need to summarize posts this time. The assignment is divided into subtasks a, b, c and an optional task m.
 
-- In task a, I'm supposed to configure a fresh virtual machine that has Apache and an SSH-server. The machine is for hosting a website with using virtual based host technique. This task can be done locally with Virtualbox.
-- In task b, I'm supposed to configure SSH key authentication for this new VM.
-- Task c is about analyzing and comparing information on my domain name with outputs from commands `hosts` and `dig` and my domain name information from the renters page which is Namecheap.com in my case.
-- The optional task is about installing Vagrant and configuring a virtual machine with it.
+- In task a, I was supposed to configure a fresh virtual machine that had Apache and an SSH-server installed on it. The purpose of the machine was to host a website using virtual-based host techniques. This task could be done locally within VirtualBox.
+- In task b, I was supposed to configure SSH key authentication for this new VM.
+- Task c was about analyzing and comparing information on my domain name with outputs from the `hosts` and `dig` commands, as well as information about my domain name from the tenant's page, which in my case is Namecheap.com.
+- The optional task was to install Vagrant and configure a virtual machine with it.
 
 (Karvinen 2024)
 
@@ -13,17 +13,17 @@ It's time for homework assignment number five. There is no need to summarize pos
 
 ![0](Screenshots/3/1.png)
 
-This screenshot is still valid although I've updated the system in between. I should tell something about the specs listed, so not so tech savy people can understand the starting point as well.
+This screenshot is still valid even though I've updated the system in between. I should provide some information on the specs listed, so that those who aren't as tech-savvy can understand the starting point as well.
 - OS Name - This is the operating system name. Windows 11 is the newest Windows OS. Pro version is a version with some additional accessories. The home version is the usual version people use at home and the pro version is more tailored towards business use.
 - Microsoft is the manufacturer of the said OS.
 - System manufacturer is the manufacturer of the laptop that I used. Here it is Lenovo.
 - System type - x64-based is the norm these days.
 - System SKU - Essentially the model of this laptop is Lenovo ThinkPad T14 generation 2a.
-- Processor - The processor listed is a decent processor, nothing too fancy nor nothing too bad. This could be compared to some Intel i5 processors.
-- RAM - 16 GB is a good amount of RAM for a school/hobby laptop.
+- Processor - The processor listed is a decent processor, nothing too fancy nor nothing too bad. This could be compared to some Intel i5 processors. A processor is like the brains of a computer.
+- RAM - 16 GB is a good amount of RAM for a school/hobby laptop. The more RAM a computer has, the more tasks a computer can handle simultaneously.
 
-Additional information include,
-- Location - Home in Vaasa
+Additional information includes,
+- Location - At home in Vaasa
 - Network - a good wireless connection
 - Storage - An SSD with 350 GB of free space
 
@@ -31,15 +31,15 @@ Additional information include,
 
 ## A new virtual machine
 
-I started doing the first task on February 16, 2024 at 11:49 PM.
+I started doing the first task on February 16, 2024, at 11:49 PM.
 
-First I opened the VirtualBox application. There I clicked on new.
+First, I opened the VirtualBox application. There I clicked on "new".
 
 ![1](Screenshots/5/1.png)
 
 ![2](Screenshots/5/2.png)
 
-Then I selected the correct image. Changed the version to 64-bit, clicked skip unattended installation and filled other information. RAM -> 2048 MB, CPU -> 2 and Storage -> 50.59 GB.
+Then I selected the correct image. Changed the version to 64-bit, clicked skip unattended installation and filled in other information. RAM -> 2048 MB, CPU -> 2 and Storage -> 50.59 GB.
 
 ![3](Screenshots/5/3.png)
 
@@ -47,7 +47,7 @@ I clicked on start and selected the first option.
 
 ![4](Screenshots/5/4.png)
 
-Once in I checked that I could surf the net with firefox and checked that the console works.
+Once I was in, I checked that I could surf the net with Firefox and checked that the console works.
 
 ![5](Screenshots/5/5.png)
 
@@ -55,11 +55,11 @@ Once in I checked that I could surf the net with firefox and checked that the co
 
 ![7](Screenshots/5/7.png)
 
-Then I opened the Install debian application. Clicked on launch anyway.
+Then I opened the Install Debian application. Clicked on launch anyway.
 
 ![8](Screenshots/5/8.png)
 
-Chose english as the language, chose Helsinki as the location,
+Chose English as the language, chose Helsinki as the location,
 
 ![9](Screenshots/5/9.png)
 
@@ -79,7 +79,7 @@ The installation was completed at 12:05 PM. Then it froze
 
 ![13](Screenshots/5/13.png)
 
-so I shut it down manually and started it again. I logged in and opened the terminal.
+so, I shut it down manually and started it again. I logged in and opened the terminal.
 
 ![14](Screenshots/5/14.png)
 
@@ -87,11 +87,11 @@ It was `sudo apt update` and `sudo apt upgrade` time. Now this step and the earl
 
 ![15](Screenshots/5/15.png)
 
-installed Apache2
+installed Apache2.
 
 ![16](Screenshots/5/16.png)
 
-and remembered to install the guest additions.
+and remembered to install the guest additions (GitJuski 2024).
 
 ![17](Screenshots/5/17.png)
 
@@ -107,15 +107,15 @@ After this I made my way to the correct directory and ran the `autorun.sh` scrip
 
 ![20](Screenshots/5/20.png)
 
-and after it was done I rebooted.
+and after it was done, I rebooted the machine.
 
 ![21](Screenshots/5/21.png)
 
-When I got back in I installed the ssh server.
+When I got back in, I installed the SSH server.
 
 ![22](Screenshots/5/22.png)
 
-Then I created a new virtualhost by going to the /etc/apache/sites-available and creating a new file with sudoedit.
+Then I created a new virtual host by going to the /etc/apache/sites-available and creating a new file with sudoedit.
 
 ![23](Screenshots/5/23.png)
 
@@ -123,11 +123,11 @@ This time I remembered the whole config for memory.
 
 ![23.2](Screenshots/5/23.2.png)
 
-Then I saved it and disabled the default conf. Then I tried to enable the new conf but it didn't work and then I realised that I didn't add the .conf suffix. Well I renamed it but forgot sudo so I grabbed the command again with up arrow key and then went to the start of the command with ctrl + a. There I added sudo and then pressed return and it worked.
+Then I saved it and disabled the default conf. Then I tried to enable the new conf, but it didn't work and then I realized that I didn't add the .conf suffix. Well, I renamed it but forgot sudo so I grabbed the command again with up arrow key and then went to the start of the command with ctrl + a. There I added sudo and then pressed return and it worked.
 
 ![24](Screenshots/5/24.png)
 
-Then I enabled the conf and tested the config. The syntax was ok but the documentroot path was missing so I made the path and tested the config again.
+Then I enabled the conf and tested the config. The syntax was ok but the document root path was missing so I made the path and tested the config again.
 
 ![25](Screenshots/5/25.png)
 
@@ -139,7 +139,7 @@ Then I restarted Apache,
 
 ![28](Screenshots/5/28.png)
 
-made my way to the new directory and created an index.html this time with the cat command.
+I made my way to the new directory and this time, I created an index.html file with the cat command.
 
 ![29](Screenshots/5/29.png)
 
@@ -155,7 +155,7 @@ There I added the anjovis.example.com and made it point to 127.0.0.1 which is th
 
 ![32](Screenshots/5/32.png)
 
-I tested it with Firefox and it worked.
+I tested it with Firefox, and it worked.
 
 ![33](Screenshots/5/33.png)
 
@@ -163,13 +163,13 @@ I was done with this at 12:36 PM. At this point I had a lunch break.
 
 ## SSH keys
 
-I got back to work at 2:12 PM. I wanted to simulate this whole thing inside an internal network. Essentially I will create an isolated network where the puppet-server and the master will reside isolated from outside network and my own lan. I have done this once before with a guide from one of my favourite Youtubers Networkchuck. The internal network and the dedicated dhcp server can be made using VirtualBox tools. Mainly a tool called vboxmanage.
+I got back to work at 2:12 PM. I wanted to simulate this whole thing inside an internal network. Essentially, I created an isolated network where the puppet-server and the master will reside isolated from outside network and my own LAN (Local Area Network). I have done this once before with a guide from one of my favorite Youtubers Networkchuck (NetworkChuck 2021). The internal network and the dedicated DHCP (Dynamic Host Configuration Protocol) server can be made using VirtualBox tools. Mainly a tool called Vboxmanage.
 
-First I opened the VirtualBox application. There I clicked on the puppet mcahine and clicked settings.
+First, I opened the VirtualBox application. There I clicked on the puppet machine and clicked settings.
 
 ![34](Screenshots/5/34.png)
 
-There I opened the network tab and changed the "attached to:" option to internal network from NAT. I gave the internal network a name "Room". Then I did the same for the controller machine (master-controller).
+There I opened the network tab and changed the "attached to:" option to internal network from NAT. I gave the internal network the name "Room". Then I did the same for the controller machine (master-controller).
 
 ![35](Screenshots/5/35.png)
 
@@ -179,31 +179,33 @@ Then I had to create a dhcp server for the network and I did it like this.
 
 ![37](Screenshots/5/37.png)
 
-First I opened the cmd on windows and navigated to C:\Program Files\Oracle\VirtualBox. There I opened the vboxmanage and told the executable to add a dhcp server to the Room network. I gave the dhcp an IP address of 10.30.1.1 and then I configured the IP range to be 10.30.1.110 to 10.30.1.115. The netmask is the usual  /24 (255.255.255.0). --enable enabled the server. Then to check that it was correctly configured I user a command `vboxmanage list dhcpservers` to list them and checked the correct configuration.
+First, I opened the cmd on windows and navigated to C:\Program Files\Oracle\VirtualBox. There I opened vboxmanage and told the executable to add a DHCP server to the network called Room. I gave the DHCP an IP address of 10.30.1.1 and then I configured the IP range to be 10.30.1.110 to 10.30.1.115. The netmask was the usual /24 (255.255.255.0). --enable enabled the server. (NetworkChuck 2021.)
+
+Then to check that it was correctly configured I used a command `vboxmanage list dhcpservers` to list them and checked the correct configuration (VirtualBox.org s.a).
 
 ![38](Screenshots/5/38.png)
 
-Then I started both of the machines and logged in. On the left is the controller aka master-controller and the user masterofpuppets. On the right is the puppet machine aka puppet-box with a user anjovis.
+Then I started both machines and logged in. On the left is the controller aka master-controller and the user masterofpuppets. On the right is the puppet machine aka puppet-box with a user anjovis.
 
 ![39](Screenshots/5/39.png)
 
-Here I checked that the dhcp server assigned the correct IP addresses. Then I pinged the Google's dns without success and then I pinged the puppet-box and it responded.
+Here I checked that the DHCP server assigned the correct IP addresses. Then I pinged Google's DNS (Domain Name System) without success and then I pinged the puppet-box and it responded.
 
 ![40](Screenshots/5/40.png)
 
-So these machines are isolated together in this network. On the puppet-box I opened the ports 22 and 80.
+So, these machines are isolated together in this network. On the puppet-box I opened the ports 22 and 80.
 
 ![41](Screenshots/5/41.png)
 
-Now I could open a browser and navigate to the puppets IP address with the master machine. I could read the heippa text which was good.
+Now I was able to open a browser and navigate to the puppets IP address with the master machine. I could read the heippa text which was good.
 
 ![42](Screenshots/5/42.png)
 
-Then I established an SSH connection to the puppet with the master. Here we can see that there are two session on the puppet-box.
+Then I established an SSH connection to the puppet with the master. Here we can see that there were two sessions on the puppet-box.
 
 ![43](Screenshots/5/43.png)
 
-One from :0 and one from 10.30.1.111. The one from 10.30.1.111 is the master. Then I created an SSH key pair and send the public key to the puppet.
+One from :0 and one from 10.30.1.111. The one from 10.30.1.111 is the master. Then I created an SSH key pair and sent the public key to the puppet.
 
 ![44](Screenshots/5/44.png)
 
@@ -249,7 +251,7 @@ I set the tail to be active so I can open the site again and see the new lines.
 
 I was done at 2:53 PM.
 
-I decided to take some screenshots after, to show that the the site works but the connections to outside doesn't.
+I decided to take some screenshots after, to show that the site works but the connections to outside doesn't.
 
 ![56](Screenshots/5/56.png)
 
@@ -259,15 +261,15 @@ I also tested the SSH once more since I made the password logins prohibited.
 
 ## host and dig
 
-I started doing this at 3:38 PM. First I started my main VM.
+I started doing this at 3:38 PM. First, I started my main VM.
 
 ![58](Screenshots/5/58.png)
 
-There I did the usual (`sudo apt update` and `sudo apt upgrade`). Then I installed the host and dig commands.
+There I did the usual (`sudo apt update` and `sudo apt upgrade`). Then I installed the host and dig commands (Karvinen 2024).
 
 ![59](Screenshots/5/59.png)
 
-After the install was done I used them both. I wanted to put the outputs into their own files.
+After the installation was done, I used them both. I wanted to put the outputs into their own files.
 
 ![60](Screenshots/5/60.png)
 
@@ -279,7 +281,7 @@ Then I navigated to namecheap.com and logged in.
 
 ![62](Screenshots/5/62.png)
 
-There I went to the domain list and advanced domain tab. The host dig output shows two A records just like in the advanced dns tab. The dig output also shows a number 1800 which refers to the 30 min TTL (Time To Live) on the advanced tab. Both outputs also display the codehammer.shop websites IP address 172.232.159.80. Then the dig output shows the query time and the destination of the query. The server in question is Elisa's dns server and the information was queried from there.
+There I went to the domain list and advanced domain tab. The host dig output shows two A records just like in the advanced dns tab. The dig output also shows the number 1800 which refers to the 30 min TTL (Time To Live) on the advanced tab. Both outputs also display the codehammer.shop website's IP address 172.232.159.80. Then the dig output shows the query time and the destination of the query. The server in question is Elisa's DNS server and the information was queried from there.
 
 ![63](Screenshots/5/63.png)
 
@@ -293,7 +295,7 @@ I was done at 4:02 PM.
 
 ## Vagrant
 
-I started this task at 4:20 PM. I couldn't install virtualbox on this vm so I started looking for answers.
+I started this task at 4:20 PM. I couldn't install VirtualBox on this VM so I started looking for answers.
 
 ![66](Screenshots/5/66.png)
 
@@ -301,11 +303,11 @@ After a long while of researching I decided to just install it on my Windows ins
 
 ![67](Screenshots/5/67.png)
 
-I downloaded it. After it was done I installed it
+I downloaded it. After it was done, I installed it
 
 ![68](Screenshots/5/68.png)
 
-and after the installation I had to reboot. I opened Windows powershell and created a folder vagrant inside my users folder with `mkdir vagrant` (now I knew that the vagrant init command creates a file since I quickly tested vagrant during the last lecture, althought I only installed the vagrant and not the VirtualBox which is why it didn't work. Also I had a couple of minutes to do so, so that's why I didn't go any further with it.).  I navigated there and created the vm.
+and after the installation I had to reboot. I opened Windows powershell and created a folder vagrant inside my user's folder with `mkdir vagrant` **(now I knew that the vagrant init command creates a file since I quickly tested vagrant during the last lecture, although I only installed the Vagrant and not the VirtualBox which is why it didn't work. Also, I had a couple of minutes to do so, so that's why I didn't go any further with it.)**. I navigated there and created the VM.
 
 ![69](Screenshots/5/69.png)
 
@@ -313,7 +315,7 @@ and after the installation I had to reboot. I opened Windows powershell and crea
 
 ![71](Screenshots/5/71.png)
 
-When it was created I connected via SSH.
+When it was created, I connected via SSH.
 
 ![72](Screenshots/5/72.png)
 
@@ -326,3 +328,14 @@ Finally I exited with exit and destroyed the machine.
 ![75](Screenshots/5/75.png)
 
 I was done at 5:32 PM.
+
+
+# References
+
+GitJuski. January 20, 2024. h1-GJ. Available at [https://github.com/GitJuski/Linux-servers/edit/main/h1-GJ.md](https://github.com/GitJuski/Linux-servers/edit/main/h1-GJ.md). Read on February 16, 2024.
+
+Karvinen, T. January 11, 2024. Linux Palvelimet 2024 alkukevät. Available at [https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/](https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/)
+
+NetworkChuck. March 5, 2021. how to build a HACKING lab (to become a hacker). A Youtube. Available at [https://www.youtube.com/watch?v=mvsiuLzpx2E](https://www.youtube.com/watch?v=mvsiuLzpx2E). Watched on February 16, 2023.
+
+VirtualBox.org. S.a. Chapter 8. VBoxManage. Available at [https://www.virtualbox.org/manual/ch08.html](https://www.virtualbox.org/manual/ch08.html). Read on February 16, 2023.
