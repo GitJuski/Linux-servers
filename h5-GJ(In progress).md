@@ -307,7 +307,7 @@ I downloaded it. After it was done, I installed it
 
 ![68](Screenshots/5/68.png)
 
-and after the installation I had to reboot. I opened Windows powershell and created a folder vagrant inside my user's folder with `mkdir vagrant` **(now I knew that the vagrant init command creates a file since I quickly tested vagrant during the last lecture, although I only installed the Vagrant and not the VirtualBox which is why it didn't work. Also, I had a couple of minutes to do so, so that's why I didn't go any further with it.)**. I navigated there and created the VM.
+and after the installation I had to reboot. I opened Windows powershell and created a folder vagrant inside my user's folder with `mkdir vagrant` **(now I knew that the vagrant init command creates a file since I quickly tested vagrant during the last lecture, although I only installed the Vagrant and not the VirtualBox which is why it didn't work. Also, I had a couple of minutes to do so, so that's why I didn't go any further with it.)**. I navigated there and created the VM (Karvinen 2024).
 
 ![69](Screenshots/5/69.png)
 
@@ -315,7 +315,7 @@ and after the installation I had to reboot. I opened Windows powershell and crea
 
 ![71](Screenshots/5/71.png)
 
-When it was created, I connected via SSH.
+When it was created, I connected via SSH (Karvinen 2024).
 
 ![72](Screenshots/5/72.png)
 
@@ -323,7 +323,7 @@ When it was created, I connected via SSH.
 
 ![74](Screenshots/5/74.png)
 
-Finally I exited with exit and destroyed the machine.
+Finally I exited with exit and destroyed the machine (Karvinen 2024).
 
 ![75](Screenshots/5/75.png)
 
