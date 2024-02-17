@@ -14,7 +14,7 @@ It's time for homework assignment number five. There was no need to summarize po
 ![0](Screenshots/3/1.png)
 
 This screenshot is still valid even though I've updated the system in between. I should provide some information on the specs listed, so that those who aren't as tech-savvy can understand the starting point as well.
-- OS Name - This is the operating system name. Windows 11 is the newest Windows OS. Pro version is a version with some additional accessories. The home version is the usual version people use at home and the pro version is more tailored towards business use.
+- OS Name - This is the operating system name. Windows 11 is the newest Windows OS. Pro version is a version with some additional features. The home version is the usual version people use at home and the pro version is more tailored towards business use.
 - Microsoft is the manufacturer of the said OS.
 - System manufacturer is the manufacturer of the laptop that I used. Here it is Lenovo.
 - System type - x64-based is the norm these days.
