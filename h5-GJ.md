@@ -332,7 +332,7 @@ I was done at 5:32 PM.
 
 # References
 
-GitJuski. January 20, 2024. h1-GJ. Available at [https://github.com/GitJuski/Linux-servers/edit/main/h1-GJ.md](https://github.com/GitJuski/Linux-servers/edit/main/h1-GJ.md). Read on February 16, 2024.
+GitJuski. January 20, 2024. h1-GJ. Available at [https://github.com/GitJuski/Linux-servers/blob/main/h1-GJ.md](https://github.com/GitJuski/Linux-servers/blob/main/h1-GJ.md) Read on February 16, 2024.
 
 Karvinen, T. January 11, 2024. Linux Palvelimet 2024 alkukevät. Available at [https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/](https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/)
 
