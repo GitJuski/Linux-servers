@@ -16,25 +16,239 @@ COMING SOON...
 
 I did things little bit differently this time. I didn't write this report while doing the task like I used to do. This time I just made a short one liner notes while doing the task. I then built this report from those notes. This allowed me to fully focus on the task and I was done with it faster. I wanted to do this task from scratch, so I decided to do it on another VM. This VM had GNOME desktop environment instead of xfce which is why it looks a bit different. I have used this VM as a lab machine inside a test environment. To make it safe I had to close firewall ports, delete vulnerable users, change the network mode to NAT and purge apache2. I also decided to disable and stop the SSH. Once I was done with those I started doing this task.
 
-My sysinfo.txt was still valid. 288 GB of free space on SSD, I was home in Vaasa and I used a good wireless connection. The VM had 4 GB of RAM, 2 processors and 50 GB of storage.
+My sysinfo.txt was still valid.
+
+![59](Screenshots/6/59.png)
+
+288 GB of free space on SSD, I was home in Vaasa and I used a good wireless connection. The VM had 4 GB of RAM, 2 processors and 50 GB of storage.
 
 ## Production install
 
 ### Apache
 
-I started this at 2:41 PM. First I opened the VirtualBox application, selected the correct VM and hit start. Once I was in I updated the repos and upgraded packages with `sudo apt update` and `sudo apt upgrade`. Then I installed Apache with `sudo apt install apache2`. Once it was installed I made my way to the sites-available directory and there I created a new configuration file named etsycom. Inside it I wrote the config using Tero's guide as a reference since it was a bit different from the last few times. After this was done I made the directory. I disabled the default conf, enabled the new conf and did a configtest. The syntax was ok so I made an index.html file inside the correct directory and then I tested it. Localhost showed the default page. I forgot to restart the service so I did it. Well that didn't work until I realized that the /static was declared inside the config. Then I tried localhost/static/ and that worked.
+I started this at 2:41 PM. First I opened the VirtualBox application, selected the correct VM and hit start.
+
+![1](Screenshots/6/1.png)
+
+Once I was in I updated the repos and upgraded packages with `sudo apt update` and `sudo apt upgrade`. Then I installed Apache with `sudo apt install apache2`. Once it was installed I made my way to the sites-available directory and there I created a new configuration file named etsycom.
+
+![2](Screenshots/6/2.png)
+
+Inside it I wrote the config using Tero's guide (Karvinen 2022, Production install) as a reference since it was a bit different from the last few times.
+
+![3](Screenshots/6/3.png)
+
+After this was done I made the directory.
+
+![4](Screenshots/6/4.png)
+
+I disabled the default conf, enabled the new conf and did a configtest.
+
+![5](Screenshots/6/5.png)
+
+The syntax was ok so I made an index.html file inside the correct directory and then I tested it.
+
+![6](Screenshots/6/6.png)
+
+![7](Screenshots/6/7.png)
+
+Localhost showed the default page. I forgot to restart the service so I did it.
+
+![8](Screenshots/6/8.png)
+
+Well that didn't work until I realized that the /static was declared inside the config. Then I tried localhost/static/ and that worked.
+
+![9](Screenshots/6/9.png)
 
 ### Django
 
-I installed virtualenv. Then I created the environment (Karvinen 2022, Production install). I activated it, checked that the pip is correct and created a requirements file with django correctly written in it (Karvinen 2022, Production install). After these steps I installed django and checked the installed version. I started a new project and ran into an error which was expected since I had the directories already. I removed the directories and started the project succesfully this time. Here I deactivated the virtualenv since I was really confused on how this thing works. I understood it like it was supposed to be activated when modifying things inside these directories /publicwsgi/... Later on I noticed that I didn't remember to activate it before doing changes, so now I think that it is good to have it activated when running manage.py script but is it mandatory when for example changing setting. I need to play around with it some more to understand the logic fully. After I deactivated it I started to edit the etsycom.conf once more. I opened another shell where I copied the path to TVENV. I wrote the whole config manually by copying Tero's (Karvinen 2022, Production install) config from the guide. I wanted to write it manually to understand the config more in depth. Then I installed the wsgi module (Karvinen 2022, Production install). The installation already showed me that there was some errors on the config. I checked the cofig with configtest as well. I opened the config with sudoedit and found the error. I had put two closing directories... Maybe I should just copy these configs when tired. Well I fixed the issue and tested the config once more. I forgot `>`. I added it and the syntax was ok. I restarted the service with `sudo systemctl restart apache2` and checked the localhost. A rocket was taking off! I checked that it was running on Apache
+I installed virtualenv.
+
+![10](Screenshots/6/10.png)
+
+Then I created the environment (Karvinen 2022, Production install).
+
+![11](Screenshots/6/11.png)
+
+I activated it, checked that the pip is correct and created a requirements file with django correctly written in it (Karvinen 2022, Production install).
+
+![12](Screenshots/6/12.png)
+
+After these steps I installed django and checked the installed version.
+
+![13](Screenshots/6/13.png)
+
+I started a new project and ran into an error which was expected since I had the directories already.
+
+![14](Screenshots/6/14.png)
+
+I removed the directories and started the project succesfully this time.
+
+![15](Screenshots/6/15.png)
+
+Here I deactivated the virtualenv since I was really confused on how this thing works.
+
+![16](Screenshots/6/16.png)
+
+I understood it like it was supposed to be activated when modifying things inside these directories /publicwsgi/... Later on I noticed that I didn't remember to activate it before doing changes, so now I think that it is good to have it activated when running manage.py script but is it mandatory when for example changing setting. I need to play around with it some more to understand the logic fully. After I deactivated it I started to edit the etsycom.conf once more. I opened another shell where I copied the path to TVENV.
+
+![17](Screenshots/6/17.png)
+
+I wrote the whole config manually by copying Tero's (Karvinen 2022, Production install) config from the guide.
+
+![18](Screenshots/6/18.png)
+
+I wanted to write it manually to understand the config more in depth. Then I installed the wsgi module (Karvinen 2022, Production install).
+
+![19](Screenshots/6/19.png)
+
+The installation already showed me that there was some errors on the config. I checked the cofig with configtest as well.
+
+![20](Screenshots/6/20.png)
+
+I opened the config with sudoedit and found the error. I had put two closing directories...
+
+![21](Screenshots/6/21.png)
+
+Maybe I should just copy these configs when tired. Well I fixed the issue and tested the config once more.
+
+![22](Screenshots/6/22.png)
+
+I forgot `>`. I added it and the syntax was ok.
+
+![23](Screenshots/6/23.png)
+
+I restarted the service with `sudo systemctl restart apache2` and checked the localhost.
+
+![24](Screenshots/6/24.png)
+
+A rocket was taking off! I checked that it was running on Apache (Karvinen 2024, Production install).
+
+![25](Screenshots/6/25.png)
 
 ### Disabling debug and applying static assets
 
-I started this at 3:16 PM. First I opened the setting.py file. There I changed the DEBUG = from True to False and added localhost into the ALLOWED_HOSTS. I used touch to load the changes. Then I checked the site. Not Found was expected. I opened the settings again. This time I added `import os` at the start and `STATIC_ROOT = os.path.join(BASE_DIR, 'static/')` after the STATIC_URL. (Karvinen 2022, Production install.) At this point I noticed that I forgot to activate the env again so I changed to the publicwsgi directory and used `source env/bin/activate` before going to the etsycom and using manage.py. Then I checked that the localhost/admin shows the login screen correctly. The localhost itself doesn't show anything and the localhost/static showed an error. I deactivated the env and checked the logs and noticed that the index.html is missing since I removed it some time ago when creating the project. Here I just checked how the things are organized. Then I made a simple index.html file and checked it.
+I started this at 3:16 PM. First I opened the setting.py file (Karvinen 2022, Production install).
+
+![26](Screenshots/6/26.png)
+
+There I changed the DEBUG = from True to False and added localhost into the ALLOWED_HOSTS (Karvinen 2022, Production install).
+
+![27](Screenshots/6/27.png)
+
+I used touch to load the changes (Karvinen 2022, Production install). Then I checked the site. Not Found was expected.
+
+![28](Screenshots/6/28.png)
+
+I opened the settings again. This time I added `import os` at the start and `STATIC_ROOT = os.path.join(BASE_DIR, 'static/')` after the STATIC_URL (Karvinen 2022, Production install).
+
+![29](Screenshots/6/29.png)
+
+![30](Screenshots/6/30.png)
+
+At this point I noticed that I forgot to activate the env again so I changed to the publicwsgi directory and used `source env/bin/activate` before going to the etsycom and using manage.py.
+
+![31](Screenshots/6/31.png)
+
+Then I checked that the localhost/admin shows the login screen correctly.
+
+![32](Screenshots/6/32.png)
+
+The localhost itself doesn't show anything and the localhost/static showed an error.
+
+![33](Screenshots/6/33.png)
+
+![34](Screenshots/6/34.png)
+
+I deactivated the env and checked the logs and noticed that the index.html is missing since I removed it some time ago when creating the project.
+
+![35](Screenshots/6/35.png)
+
+Here I just checked how the things are organized.
+
+![36](Screenshots/6/36.png)
+
+Then I made a simple index.html file and checked it.
+
+![37](Screenshots/6/37.png)
+
+![38](Screenshots/6/38.png)
 
 ### CRM
 
-I started this at 3:30 PM. First I made my way back to the publicwsgi, activated the venv and then made my way to the dir with manage.py. I updated the databases and created an admin user. Then I tried it and I was in. (Karvinen 2022, CRM.) Here I forgot to startapp the crm before going to add it to the installed apps. I opened the settings with the same command `nano etsycom/settings.py` and there I added crm to the installed apps (Karvinen 2022, CRM). Now this created a problem when I used manage.py startapp crm. I removed the crm from the settings and used the startapp crm (Karvinen 2022, CRM). Then I added the crm back to the settings and after that I opened the models.py. There I added a customer class. Updated the databases. Opened the admin.py and linked them together. Then went to check it but it wasn't showing. I updated the database and restarted Apache. Now it was there. There I added five objects with the add button. To make the names show I opened the models.py once again with `nano crm/models.py` and added a short function. (Karvinen 2022, CRM.) Then I did the usual and went to check the site again. It worked!
+I started this at 3:30 PM. First I made my way back to the publicwsgi, activated the venv and then made my way to the dir where manage.py was.
+
+![39](Screenshots/6/39.png)
+
+I updated the databases and created an admin user (Karvinen 2022, CRM).
+
+![40](Screenshots/6/40.png)
+
+![41](Screenshots/6/41.png)
+
+Then I tried it and I was in (Karvinen 2022, CRM).
+
+![42](Screenshots/6/42.png)
+
+![43](Screenshots/6/43.png)
+
+Here I forgot to startapp the crm before going to add it to the installed apps. I opened the settings with the same command `nano etsycom/settings.py` and there I added crm to the installed apps (Karvinen 2022, CRM).
+
+![44](Screenshots/6/44.png)
+
+Now this created a problem when I used manage.py startapp crm.
+
+![45](Screenshots/6/45.png)
+
+I removed the crm from the settings and used the startapp crm (Karvinen 2022, CRM).
+
+![46](Screenshots/6/46.png)
+
+Then I added the crm back to the settings and after that I opened the models.py.
+
+![47](Screenshots/6/47.png)
+
+There I added a customer class (Karvinen 2022, CRM).
+
+![48](Screenshots/6/48.png)
+
+Updated the databases.
+
+![49](Screenshots/6/49.png)
+
+Opened the admin.py and linked them together (Karvinen 2022, CRM).
+
+![50](Screenshots/6/50.png)
+
+![51](Screenshots/6/51.png)
+
+Then went to check it but it wasn't showing.
+
+![52](Screenshots/6/52.png)
+
+I updated the database and restarted Apache.
+
+![53](Screenshots/6/53.png)
+
+Now it was there.
+
+![54](Screenshots/6/54.png)
+
+There I added five objects with the add button.
+
+![55](Screenshots/6/55.png)
+
+To make the names show I opened the models.py once again with `nano crm/models.py` and added a short function. (Karvinen 2022, CRM.)
+
+![56](Screenshots/6/56.png)
+
+Then I did the usual and went to check the site again.
+
+![57](Screenshots/6/57.png)
+
+![58](Screenshots/6/58.png)
+
+It worked!
 
 I was done at 3:54 PM
 
