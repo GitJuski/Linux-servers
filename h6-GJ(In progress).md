@@ -13,6 +13,8 @@ It was time for homework number six. This assignment was essentially split into 
 - Disable debug by changing directory into publicwsgi/testcom and there using `micro testcom/settings.py`. Change the DEBUG value to False and add localhost and the name that is visible when looking at the site to the ALLOWED_HOSTS list. Save and use `touch testcom/wsgi.py`. For bigger changes `sudo systemctl restart apache2`. Check the site. 404 is good at this point.
 - Open the settings again. Add `import os` with the rest of imports at the start. Add `STATIC_ROOT = os.path.join(BASE_DIR, 'static/')` below STATIC_URL. Use `./manage.py collectstatic`. Check the admin site.
 
+(Karvinen 2022, Production install)
+
 # Django 4 Instant Customer Database Tutorial summed up
 
 - Update databases with `./manage.py makemigrations` and `./manage.py migrate`. Add a user with `./manage.py createsuperuser`.
@@ -20,6 +22,8 @@ It was time for homework number six. This assignment was essentially split into 
 - Open the models.py with `micro crm/models.py`. Add a class Customer with a character field from the models module. Save and use `./manage.py makemigrations` and `./manage.py migrate`.
 - Open the admin.py with `micro crm/admin.py`. Link the Customer model to the admin.py. Restart the site and check it out.
 - Open the models.py and define a function that shows the names of the customer instead of "Customer object".
+
+(Karvinen 2022, CRM)
 
 # The main task
 
