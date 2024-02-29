@@ -254,12 +254,166 @@ I was done at 3:54 PM
 
 # My optional task.
 
-I wanted to make another app since the crm app was done using Tero's step by step guide. COMING SOON...
+I wanted to make another app since the crm app was done using Tero's step by step guide.
+
+On Thursday I woke up and decided to play around with the models.py and admin.py files on my main VM muumi. I played around for a bit and I started to understand the logic behind these. I made a simple app with the use of chatgpt and a couple of references. When I was at a point that I understood the code and understood why it works I wanted to create a simple app as my optional task. The reason I didn't make a report out of the playing around bit is because I was just playing around with the tools and testing how everything looks and works.
+
+Before this course started I had planned to do a little project on my freetime. I wanted to make an internal network website with a Linux machine where the website is using a little database with different recipes in it. The website would randomly select different foods for me and my partner to eat during the week. I also wanted to buy a Raspberry pi and have it show these recipes with my old tv. As a bonus I wanted to make the site a bit more appealing. I wanted to do this project to learn a bit of Linux, databases, websites and so on. Unfortunately I never had the time to even start this. The results of this optional task I did were something along those lines of the first part of my project, so I was happy with the outcome. The app is for planning what to eat for a week.
+
+I started doing this at 11:08 AM. First I opened the VirtualBox application and started the etsy-box VM. Once I was in I checked that the site was still going with Firefox.
+
+![60](Screenshots/6/60.png)
+
+Then I navigated to the publicwsgi directory with `cd publicwsgi`. There I activated the env with `source env/bin/activate` and after it was activated I made my way downwards with `cd etsycom`. Once there I started a new app.
+
+![61](Screenshots/6/61.png)
+
+Then I opened the settings and added the new app into the installed app list.
+
+![62](Screenshots/6/62.png)
+
+![63](Screenshots/6/63.png)
+
+Then I opened the models.py file.
+
+![64](Screenshots/6/64.png)
+
+This is the code I wrote.
+
+![65](Screenshots/6/65.png)
+
+It was similar to the code I wrote when messing around before this so I used it as a reference. When messing around I used Mozilla's post (Mozilla s.a) and chatgpt as references.
+
+        from django.db import models # this was already there
+
+        class Food(models.Model): # created a class called Food
+
+                food = models.CharField(max_length=100) # created a characterfield named food with the maximum length of 100
+                description = models.TextField() # created a textfield named description (Mozilla s.a).
+                coming = models.BooleanField(default=false) # with the help of chatgpt I created a booleanfield with the name coming (upcoming). I meant that something is upcoming this week or next week
+                amount = models.IntegerField(null=True) # Added this for the sake of it (Mozilla s.a). Had a problem with this when messing around. Adding null=True fixed the problem
+
+                WEEKDAYS = (
+                    ('monday','Monday'),
+                    ('tuesday','Tuesday'),
+                    ('wednesday','Wednesday'),  # Here I created a dropdown list with the help of chatgpt. I asked it to explain to me on how a dropdown list is made.
+                    ('thursday','Thursday'),
+                    ('friday','Friday'),
+                    ('saturday','Saturday'),
+                    ('-','-'),
+                )
+
+                weekday = models.CharField(max_length=10, choices=WEEKDAYS, default='') # Here is the actual characterfield where the dropdown list is. Adding the default value to be '' fixed a problem.
+                created = models.DateTimeField(auto_now_add=True) # I added this for the sake of it (Mozilla s.a).
+
+                def __str__(self):
+                    return self.food
+
+After it was done I used `./manage.py makemigrations` which returned an error message.
+
+![66](Screenshots/6/66.png)
+
+I fixed it and had a second one.
+
+![67](Screenshots/6/67.png)
+
+Fixed it as well and then It was ok.
+
+![68](Screenshots/6/68.png)
+
+![69](Screenshots/6/69.png)
+
+Then I opened the admin.py file.
+
+![70](Screenshots/6/70.png)
+
+There I linked the models to the admin page.
+
+![71](Screenshots/6/71.png)
+
+Then I restarted Apache with `sudo systemctl restart apache2` and checked the site.
+
+![72](Screenshots/6/72.png)
+
+I opened the Foods tab and clicked on add food.
+
+![73](Screenshots/6/73.png)
+
+This is what it looks like.
+
+![74](Screenshots/6/74.png)
+
+First you add the food, then the description, check the box if the you are planning on making the food this or next week, select the amount and add a weekday or and a line if you aren't planning on making the food this or next week. I added a couple of entries.
+
+![75](Screenshots/6/75.png)
+
+At this point it still looks a bit barebones. To fix it I opened the admin.py file once again.
+
+![76](Screenshots/6/76.png)
+
+There I added this:
+
+![77](Screenshots/6/77.png)
+
+        class FoodAdmin(Admin.ModelAdmin): # I asked chatgpt on how to make some of the things visible without opening the entry. It gave me a frame which I modified to my liking.
+                list_display = ['food', 'coming', 'description', 'weekday', 'amount'] # These are the fields I wanted to be visible and I created inside the models.py
+
+I tried did the usual `sudo systemctl restart apache2` and checked the site, but nothing had changed so I opened the admin.py again and noticed that I forgot to add the FoodAdmin to the admin.site.register, so I added it.
+
+![78](Screenshots/6/78.png)
+
+Then I did restarted Apache and checked the site. Everytime I check a site for new stuff I use Shift reload. There we go. This is what it looks like now.
+
+![79](Screenshots/6/79.png)
+
+They can also be sorted. Here I sorted them with so the ones that I wanna make this week or next week show up first.
+
+![80](Screenshots/6/80.png)
+
+Here I wanted to show the dropdown list when choosing a weekday.
+
+![81](Screenshots/6/81.png)
+
+Here I added one more entry.
+
+![82](Screenshots/6/82.png)
+
+Here I opened the salmon entry.
+
+![83](Screenshots/6/83.png)
+
+The history can be viewed by clicking history. Here we can see the date and time when it was added.
+
+![84](Screenshots/6/84.png)
+
+I noticed that the time was off by 2 hours so I checked the settings. The time zone was UTC so I tried to change it to UTC+2.
+
+![85](Screenshots/6/85.png)
+
+![86](Screenshots/6/86.png)
+
+Makemigrations didn't like it
+
+![87](Screenshots/6/87.png)
+
+so I opened the Django documentation (Django s.a) and found out that the timezone can be written like this 'Europe/Helsinki'. I opened the settings once more and changed the value to match that.
+
+![88](Screenshots/6/88.png)
+
+I restarted Apache and checked the site. There it was, the time was corrected.
+
+![89](Screenshots/6/89.png)
 
 # References
+
+ChatGPT. Available at [https://chat.openai.com/auth/login](https://chat.openai.com/auth/login). Questions asked on February 29, 2024.
+
+Django, s.a. Time zones. Documentation. Available at [https://docs.djangoproject.com/en/5.0/topics/i18n/timezones/](https://docs.djangoproject.com/en/5.0/topics/i18n/timezones/). Read on February 29, 2024.
 
 Karvinen, T. January 11, 2024. Linux Palvelimet 2024 alkukevät. Available at [https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/](https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/)
 
 Karvinen, T. February 13, 2022. Deploy Django 4 - Production Install. Available at [https://terokarvinen.com/2022/deploy-django/](https://terokarvinen.com/2022/deploy-django/). Read on February 28, 2024.
 
 Karvinen, T. February 13, 2022. Django 4 Instant Customer Database Tutorial. Available at [https://terokarvinen.com/2022/django-instant-crm-tutorial/](https://terokarvinen.com/2022/django-instant-crm-tutorial/). Read on February 28, 2024.
+
+Mozilla, s.a. Django Tutorial Part 3: Using models. mdn web docs. Available at [https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models). Read on February 29, 2024.
