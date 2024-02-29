@@ -309,7 +309,7 @@ It was similar to the code I wrote when messing around before this so I used it 
                 def __str__(self):
                     return self.food
 
-After it was done I used `./manage.py makemigrations` which returned an error message.
+Using upcoming instead of coming would have been a better choice of words... but oh well it is what it is. After it was done I used `./manage.py makemigrations` which returned an error message.
 
 ![66](Screenshots/6/66.png)
 
