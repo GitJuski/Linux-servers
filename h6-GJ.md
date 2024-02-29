@@ -423,7 +423,7 @@ I was done at 11:51 AM.
 
 # References
 
-ChatGPT. Available at [https://chat.openai.com/auth/login](https://chat.openai.com/auth/login). Questions asked on February 29, 2024.
+ChatGPT. Questions asked on February 29, 2024.
 
 Django, s.a. Time zones. Documentation. Available at [https://docs.djangoproject.com/en/5.0/topics/i18n/timezones/](https://docs.djangoproject.com/en/5.0/topics/i18n/timezones/). Read on February 29, 2024.
 
