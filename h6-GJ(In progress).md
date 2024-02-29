@@ -4,33 +4,44 @@ It was time for homework number six. This assignment was essentially split into 
 
 # Deploy Django 4 - Production Install summed up
 
-COMING SOON...
+- Install Apache with `sudo apt-get -y install apache2`. Remember to update first `sudo apt-get update`. Test it. Replace the test site. `echo "hello" | sudo tee /var/www/html/index.html` works well. Test it again.
+- Create directories in home directory. `mkdir -p publicwsgi/testcom/static/` -> `echo "hello" | tee publicwsgi/testcom/static/index.html`.
+- Create a new virtualhost. `sudoedit /etc/apache2/sites-available/testcom.conf`. Write the conf and save. Disable the default conf and enable the newly created conf. `sudo a2dissite 000-default.conf ` -> `sudo a2ensite testcom.conf`. Do a configtest `/sbin/apache2ctl configtest`. Fix the possible errors. Restart Apache `sudo systemctl restart apache2`. Check the site.
+- Create a Virtualenv. Install with `sudo apt-get -y install virtualenv`. Go to the ~/publicwsgi directory. Create the env with `virtualenv --system-site-packages -p python3 env`.
+- Activate it with `source env/bin/activate`. Check that the pip is from env with `which pip`. Create a requirements.txt file with django written in it. Double check that it's written correctly. Install Django with `pip install -r requirements.txt` and check the version with `django-admin version`.
+- Start a project with `django-admin startproject testcom`. Sudoedit the testcom.conf. Add the correct lines and variables. Install the wsgi module with `sudo apt-get -y install libapache2-mod-wsgi-py3`. Check the syntax again and restart Apache. Check the site. Make sure that it's Apache and not the dev server with `curl -sI localhost | grep Server`.
+- Disable debug by changing directory into publicwsgi/testcom and there using `micro testcom/settings.py`. Change the DEBUG value to False and add localhost and the name that is visible when looking at the site to the ALLOWED_HOSTS list. Save and use `touch testcom/wsgi.py`. For bigger changes `sudo systemctl restart apache2`. Check the site. 404 is good at this point.
+- Open the settings again. Add `import os` with the rest of imports at the start. Add `STATIC_ROOT = os.path.join(BASE_DIR, 'static/')` below STATIC_URL. Use `./manage.py collectstatic`. Check the admin site.
 
 # Django 4 Instant Customer Database Tutorial summed up
 
-COMING SOON...
+- Update databases with `./manage.py makemigrations` and `./manage.py migrate`. Add a user with `./manage.py createsuperuser`.
+- Create a new crm app with `./manage.py startapp crm`. Open the settings with `micro testcom/settings.py`. Add crm into the INSTALLED_APPS list.
+- Open the models.py with `micro crm/models.py`. Add a class Customer with a character field from the models module. Save and use `./manage.py makemigrations` and `./manage.py migrate`.
+- Open the admin.py with `micro crm/admin.py`. Link the Customer model to the admin.py. Restart the site and check it out.
+- Open the models.py and define a function that shows the names of the customer instead of "Customer object".
 
 # The main task
 
 ## Essential background information
 
-I did things little bit differently this time. I didn't write this report while doing the task like I used to do. This time I just made a short one liner notes while doing the task. I then built this report from those notes. This allowed me to fully focus on the task and I was done with it faster. I wanted to do this task from scratch, so I decided to do it on another VM. This VM had GNOME desktop environment instead of xfce which is why it looks a bit different. I have used this VM as a lab machine inside a test environment. To make it safe I had to close firewall ports, delete vulnerable users, change the network mode to NAT and purge apache2. I also decided to disable and stop the SSH. Once I was done with those I started doing this task.
+I did things a little bit differently this time. I didn't write this report while doing the task like I used to do. This time I just made a short one liner notes while doing the task. I then built this report from those notes. This allowed me to fully focus on the task and I was done with it faster. I wanted to do this task from scratch, so I decided to do it on another VM. This VM had GNOME desktop environment instead of xfce which is why it looks a bit different. I have used this VM as a lab machine inside a test environment. To make it safe I had to close firewall ports, delete vulnerable users, change the network mode to NAT and purge apache2. I also decided to disable it and stop the SSH. Once I was done with those, I started doing this task.
 
 My sysinfo.txt was still valid.
 
 ![59](Screenshots/6/59.png)
 
-288 GB of free space on SSD, I was home in Vaasa and I used a good wireless connection. The VM had 4 GB of RAM, 2 processors and 50 GB of storage.
+288 GB of free space on SSD, I was home in Vaasa, and I used a good wireless connection. The VM had 4 GB of RAM, 2 processors and 50 GB of storage.
 
 ## Production install
 
 ### Apache
 
-I started this at 2:41 PM. First I opened the VirtualBox application, selected the correct VM and hit start.
+I started this at 2:41 PM. First, I opened the VirtualBox application, selected the correct VM and hit start.
 
 ![1](Screenshots/6/1.png)
 
-Once I was in I updated the repos and upgraded packages with `sudo apt update` and `sudo apt upgrade`. Then I installed Apache with `sudo apt install apache2`. Once it was installed I made my way to the sites-available directory and there I created a new configuration file named etsycom.
+Once I was in, I updated the repos and upgraded packages with `sudo apt update` and `sudo apt upgrade`. Then I installed Apache with `sudo apt install apache2`. Once it was installed, I made my way to the sites-available directory and there I created a new configuration file named etsycom.
 
 ![2](Screenshots/6/2.png)
 
@@ -38,7 +49,7 @@ Inside it I wrote the config using Tero's guide (Karvinen 2022, Production insta
 
 ![3](Screenshots/6/3.png)
 
-After this was done I made the directory.
+After this was done, I made the directory.
 
 ![4](Screenshots/6/4.png)
 
@@ -46,17 +57,17 @@ I disabled the default conf, enabled the new conf and did a configtest.
 
 ![5](Screenshots/6/5.png)
 
-The syntax was ok so I made an index.html file inside the correct directory and then I tested it.
+The syntax was ok, so I made an index.html file inside the correct directory and then I tested it.
 
 ![6](Screenshots/6/6.png)
 
 ![7](Screenshots/6/7.png)
 
-Localhost showed the default page. I forgot to restart the service so I did it.
+Localhost showed the default page. I forgot to restart the service, so I did it.
 
 ![8](Screenshots/6/8.png)
 
-Well that didn't work until I realized that the /static was declared inside the config. Then I tried localhost/static/ and that worked.
+Well, that didn't work until I realized that the /static was declared inside the config. Then I tried localhost/static/ and that worked.
 
 ![9](Screenshots/6/9.png)
 
@@ -90,7 +101,7 @@ Here I deactivated the virtualenv since I was really confused on how this thing 
 
 ![16](Screenshots/6/16.png)
 
-I understood it like it was supposed to be activated when modifying things inside these directories /publicwsgi/... Later on I noticed that I didn't remember to activate it before doing changes, so now I think that it is good to have it activated when running manage.py script but is it mandatory when for example changing setting. I need to play around with it some more to understand the logic fully. After I deactivated it I started to edit the etsycom.conf once more. I opened another shell where I copied the path to TVENV.
+I understood it like it was supposed to be activated when modifying things inside these directories /publicwsgi/... Later on I noticed that I didn't remember to activate it before making changes, so now I think that it is good to have it activated when running manage.py script but is it mandatory when for example changing setting. I need to play around with it some more to understand the logic fully. After I deactivated it I started to edit the etsycom.conf once more. I opened another shell where I copied the path to TVENV.
 
 ![17](Screenshots/6/17.png)
 
@@ -102,7 +113,7 @@ I wanted to write it manually to understand the config more in depth. Then I ins
 
 ![19](Screenshots/6/19.png)
 
-The installation already showed me that there was some errors on the config. I checked the cofig with configtest as well.
+The installation already showed me that there was some errors in the config. I checked the cofig with configtest as well.
 
 ![20](Screenshots/6/20.png)
 
@@ -110,7 +121,7 @@ I opened the config with sudoedit and found the error. I had put two closing dir
 
 ![21](Screenshots/6/21.png)
 
-Maybe I should just copy these configs when tired. Well I fixed the issue and tested the config once more.
+Maybe I should just copy these configs when tired. Well, I fixed the issue and tested the config once more.
 
 ![22](Screenshots/6/22.png)
 
@@ -128,7 +139,7 @@ A rocket was taking off! I checked that it was running on Apache (Karvinen 2024,
 
 ### Disabling debug and applying static assets
 
-I started this at 3:16 PM. First I opened the setting.py file (Karvinen 2022, Production install).
+I started this at 3:16 PM. First, I opened the setting.py file (Karvinen 2022, Production install).
 
 ![26](Screenshots/6/26.png)
 
@@ -146,7 +157,7 @@ I opened the settings again. This time I added `import os` at the start and `STA
 
 ![30](Screenshots/6/30.png)
 
-At this point I noticed that I forgot to activate the env again so I changed to the publicwsgi directory and used `source env/bin/activate` before going to the etsycom and using manage.py.
+At this point I noticed that I forgot to activate the env again, so I changed to the publicwsgi directory and used `source env/bin/activate` before going to the etsycom and using manage.py.
 
 ![31](Screenshots/6/31.png)
 
@@ -176,7 +187,7 @@ Then I made a simple index.html file and checked it.
 
 ### CRM
 
-I started this at 3:30 PM. First I made my way back to the publicwsgi, activated the venv and then made my way to the dir where manage.py was.
+I started this at 3:30 PM. First, I made my way back to the publicwsgi, activated the venv and then made my way to the dir where manage.py was.
 
 ![39](Screenshots/6/39.png)
 
@@ -186,7 +197,7 @@ I updated the databases and created an admin user (Karvinen 2022, CRM).
 
 ![41](Screenshots/6/41.png)
 
-Then I tried it and I was in (Karvinen 2022, CRM).
+Then I tried it, and I was in (Karvinen 2022, CRM).
 
 ![42](Screenshots/6/42.png)
 
@@ -256,15 +267,15 @@ I was done at 3:54 PM
 
 I wanted to make another app since the crm app was done using Tero's step by step guide.
 
-On Thursday I woke up and decided to play around with the models.py and admin.py files on my main VM muumi. I played around for a bit and I started to understand the logic behind these. I made a simple app with the use of chatgpt and a couple of references. When I was at a point that I understood the code and understood why it works I wanted to create a simple app as my optional task. The reason I didn't make a report out of the playing around bit is because I was just playing around with the tools and testing how everything looks and works.
+On Thursday I woke up and decided to play around with the models.py and admin.py files on my main VM muumi. I played around for a bit, and I started to understand the logic behind these. I made a simple app with the use of chatgpt and a couple of references. When I was at a point that I understood the code and understood why it works I wanted to create a simple app as my optional task. The reason I didn't make a report out of the playing around bit is because I was just playing around with the tools and testing how everything looks and works.
 
-Before this course started I had planned to do a little project on my freetime. I wanted to make an internal network website with a Linux machine where the website is using a little database with different recipes in it. The website would randomly select different foods for me and my partner to eat during the week. I also wanted to buy a Raspberry pi and have it show these recipes with my old tv. As a bonus I wanted to make the site a bit more appealing. I wanted to do this project to learn a bit of Linux, databases, websites and so on. Unfortunately I never had the time to even start this. The results of this optional task I did were something along those lines of the first part of my project, so I was happy with the outcome. The app is for planning what to eat for a week.
+Before this course started, I had planned to do a little project in my freetime. I wanted to make an internal network website with a Linux machine where the website uses a little database with different recipes in it. The website would randomly select different foods for me and my partner to eat during the week. I also wanted to buy a Raspberry pi and have it show these recipes with my old tv. As a bonus I wanted to make the site a bit more appealing. I wanted to do this project to learn a bit about Linux, databases, websites and so on. Unfortunately, I never had the time to even start this. The results of this optional task I did were something along those lines of the first part of my project, so I was happy with the outcome. The app is for planning what to eat for a week.
 
-I started doing this at 11:08 AM. First I opened the VirtualBox application and started the etsy-box VM. Once I was in I checked that the site was still going with Firefox.
+I started doing this at 11:08 AM. First, I opened the VirtualBox application and started the etsy-box VM. Once I was in, I checked that the site was still going with Firefox.
 
 ![60](Screenshots/6/60.png)
 
-Then I navigated to the publicwsgi directory with `cd publicwsgi`. There I activated the env with `source env/bin/activate` and after it was activated I made my way downwards with `cd etsycom`. Once there I started a new app.
+Then I navigated to the publicwsgi directory with `cd publicwsgi`. There I activated the env with `source env/bin/activate` and after it was activated, I made my way downwards with `cd etsycom`. Once there I started a new app.
 
 ![61](Screenshots/6/61.png)
 
@@ -282,7 +293,7 @@ This is the code I wrote.
 
 ![65](Screenshots/6/65.png)
 
-It was similar to the code I wrote when messing around before this so I used it as a reference. When messing around I used Mozilla's post (Mozilla s.a) and chatgpt as references.
+It was similar to the code I wrote when messing around before this, so I used it as a reference. When messing around I used Mozilla's post (Mozilla s.a) and chatgpt as references.
 
         from django.db import models # this was already there
 
@@ -309,7 +320,7 @@ It was similar to the code I wrote when messing around before this so I used it 
                 def __str__(self):
                     return self.food
 
-Using upcoming instead of coming would have been a better choice of words... but oh well it is what it is. After it was done I used `./manage.py makemigrations` which returned an error message.
+Using upcoming instead of coming would have been a better choice of words... but oh well it is what it is. After it was done, I used `./manage.py makemigrations` which returned an error message.
 
 ![66](Screenshots/6/66.png)
 
@@ -317,7 +328,7 @@ I fixed it and had a second one.
 
 ![67](Screenshots/6/67.png)
 
-Fixed it as well and then It was ok.
+Fixed it as well and then it was ok.
 
 ![68](Screenshots/6/68.png)
 
@@ -343,7 +354,7 @@ This is what it looks like.
 
 ![74](Screenshots/6/74.png)
 
-First you add the food, then the description, check the box if the you are planning on making the food this or next week, select the amount and add a weekday or and a line if you aren't planning on making the food this or next week. I added a couple of entries.
+First you add the food, then the description, check the box if you are planning on making the food this or next week, select the amount and add a weekday or and a line if you aren't planning on making the food this or next week. I added a couple of entries.
 
 ![75](Screenshots/6/75.png)
 
@@ -362,7 +373,7 @@ I tried did the usual `sudo systemctl restart apache2` and checked the site, but
 
 ![78](Screenshots/6/78.png)
 
-Then I did restarted Apache and checked the site. Everytime I check a site for new stuff I use Shift reload. There we go. This is what it looks like now.
+Then I restarted Apache and checked the site. Every time I check a site for new stuff I use Shift reload. There we go. This is what it looks like now.
 
 ![79](Screenshots/6/79.png)
 
@@ -386,7 +397,7 @@ The history can be viewed by clicking history. Here we can see the date and time
 
 ![84](Screenshots/6/84.png)
 
-I noticed that the time was off by 2 hours so I checked the settings. The time zone was UTC so I tried to change it to UTC+2.
+I noticed that the time was off by 2 hours, so I checked the settings. The time zone was UTC, so I tried to change it to UTC+2.
 
 ![85](Screenshots/6/85.png)
 
@@ -396,13 +407,15 @@ Makemigrations didn't like it
 
 ![87](Screenshots/6/87.png)
 
-so I opened the Django documentation (Django s.a) and found out that the timezone can be written like this 'Europe/Helsinki'. I opened the settings once more and changed the value to match that.
+so, I opened the Django documentation (Django s.a) and found out that the timezone can be written like this 'Europe/Helsinki'. I opened the settings once more and changed the value to match that.
 
 ![88](Screenshots/6/88.png)
 
 I restarted Apache and checked the site. There it was, the time was corrected.
 
 ![89](Screenshots/6/89.png)
+
+I was done at 11:51 AM.
 
 # References
 
