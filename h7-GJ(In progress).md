@@ -475,7 +475,7 @@ To fix this I decided to change the temppu to name and vaikeus to difficulty.
 
 Should anyway use English words instead of Finnish words.
 
-I migrated and restarted Apache. Then I checked the site, and it looked good.
+I migrated and restarted Apache. Then I checked the site, and it looked good. Forgot to add, but here I changed the DEBUG back to False.
 
 ![119](Screenshots/7/119.png)
 
