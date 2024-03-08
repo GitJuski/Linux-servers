@@ -563,7 +563,21 @@ I was done at 3:22 PM. This part of the report has left me feeling drained. I de
 
 Back to work on March 8, 2024 at 10:37 AM. I opened the VirtualBox application and clicked on new. Here's the specs I went for.
 
-Then I started the machine and waited for a bit for it to start. After I got in I tested the connection by opening Firefox and checking wikipedia.org. It worked and I tested the opening the terminal and writing `whoami`. The network, mouse and keyboard all work. Then I launched the install debian app and clicked on launch anyway. I chose American English, Helsinki, Finnish default keyboard and tested it, checked the vbox harddisk annd selected erase disk, made sure the boot loader is MBR, I added my name, created a username, a hostname and created a strong password and finally I clicked install. Install took from 10:52 PM to 10:58 PM. Then I just restarted the machine. Then it froze so I forced a shutdown and started it again. Then I logged in, opened the terminal and used `sudo apt update`, `sudo apt upgrade` and `sudo apt-dist upgrade`. Once they were done I installed ufw with `sudo apt install ufw`. Then I enabled it with `sudo ufw enable`. Installing anything else was prohibited so this is where I left off. I was done at 11:08 PM.
+![139](Screenshots/7/139.png)
+
+![140](Screenshots/7/140.png)
+
+![141](Screenshots/7/141.png)
+
+Then I started the machine and waited for a bit for it to start. After I got in I tested the connection by opening Firefox and checking wikipedia.org. It worked and I tested the opening the terminal and writing `whoami`. The network, mouse and keyboard all work. Then I launched the install debian app and clicked on launch anyway. I chose American English, Helsinki, Finnish default keyboard and tested it, checked the vbox harddisk annd selected erase disk, made sure the boot loader is MBR, I added my name, created a username, a hostname and created a strong password and finally I clicked install.
+
+![142](Screenshots/7/142.png)
+
+Install took from 10:52 PM to 10:58 PM. Then I just restarted the machine. Then it froze so I forced a shutdown and started it again. Then I logged in, opened the terminal and used `sudo apt update` and `sudo apt upgrade`. Once they were done I installed ufw with `sudo apt install ufw`. Then I enabled it with `sudo ufw enable`. Installing anything else was prohibited so this is where I left off.
+
+![143](Screenshots/7/143.png)
+
+I was done at 11:08 PM.
 
 ## Optional
 
