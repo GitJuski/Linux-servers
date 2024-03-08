@@ -111,7 +111,7 @@ I tested it with voldemort and it worked like a charm.
 
 I was at 5:41 PM.
 
-## Earlier lab assignment
+## A lab assignment from a previous course done adaptively
 
 It was on March 7, 2024 when I started working on this task. To do this task I used one of my VMs called Testikone. It had 2048 MB of memory, 50 GB of storage and one CPU. I started at 10:32 AM by opening VirtualBox and starting this machine.
 
@@ -561,7 +561,9 @@ I was done at 3:22 PM. This part of the report has left me feeling drained. I de
 
 ## A fresh VM
 
-COMING SOON...
+Back to work on March 8, 2024 at 10:37 AM. I opened the VirtualBox application and clicked on new. Here's the specs I went for.
+
+Then I started the machine and waited for a bit for it to start. After I got in I tested the connection by opening Firefox and checking wikipedia.org. It worked and I tested the opening the terminal and writing `whoami`. The network, mouse and keyboard all work. Then I launched the install debian app and clicked on launch anyway. I chose American English, Helsinki, Finnish default keyboard and tested it, checked the vbox harddisk annd selected erase disk, made sure the boot loader is MBR, I added my name, created a username, a hostname and created a strong password and finally I clicked install. Install took from 10:52 PM to 10:58 PM. Then I just restarted the machine. Then it froze so I forced a shutdown and started it again. Then I logged in, opened the terminal and used `sudo apt update`, `sudo apt upgrade` and `sudo apt-dist upgrade`. Once they were done I installed ufw with `sudo apt install ufw`. Then I enabled it with `sudo ufw enable`. Installing anything else was prohibited so this is where I left off. I was done at 11:08 PM.
 
 ## Optional
 
