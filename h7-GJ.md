@@ -598,7 +598,7 @@ AskUbuntu 2010. How do I add a user to the "sudo" group? Answer by 'maco'. Avail
 
 Geeksforgeeks 2022. Shell script to display Good Morning, Good Afternoon Good Evening according to system time. Available at https://www.geeksforgeeks.org/shell-script-to-display-good-morning-good-afternoon-good-evening-according-to-system-time/. Read on March 7, 2024.
 
-GitJuski 2024. h6-GJ. Available at https://github.com/GitJuski/Linux-servers/blob/main/h6-GJ. Read on March 7, 2024.
+GitJuski 2024. h6-GJ. Available at https://github.com/GitJuski/Linux-servers/blob/main/h6-GJ.md. Read on March 7, 2024.
 
 Karvinen, T. 2024. Linux Palvelimet 2024 alkukevät. Available at https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/.
 
