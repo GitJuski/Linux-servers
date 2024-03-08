@@ -111,7 +111,7 @@ I tested it with voldemort, and it worked like a charm.
 
 It was at 5:41 PM.
 
-## A lab assignment from a previous course done adaptively
+## A lab assignment from a previous course done adaptively (Karvinen 2017)
 
 It was on March 7, 2024, when I started working on this task. To do this task I used one of my VMs called Testikone. It had 2048 MB of memory, 50 GB of storage and one CPU. I started at 10:32 AM by opening VirtualBox and starting this machine.
 
@@ -601,6 +601,8 @@ Geeksforgeeks 2022. Shell script to display Good Morning, Good Afternoon Good Ev
 GitJuski 2024. h6-GJ. Available at https://github.com/GitJuski/Linux-servers/blob/main/h6-GJ.md. Read on March 7, 2024.
 
 Karvinen, T. 2024. Linux Palvelimet 2024 alkukevät. Available at https://terokarvinen.com/2024/linux-palvelimet-2024-alkukevat/.
+
+Karvinen, T. 2017. Arvioitava laboratorioharjoitus – Linux palvelimet ict4tn021-4 tiistai – alkusyksy 2017 – 5 op. Available at https://terokarvinen.com/2017/arvioitava-laboratorioharjoitus-linux-palvelimet-ict4tn021-4-tiistai-alkusyksy-2017-5-op/. Read on March 7, 2024.
 
 Karvinen, T. 2022. Deploy Django 4 - Production Install. Available at https://terokarvinen.com/2022/deploy-django/. Read on March 7, 2024.
 
